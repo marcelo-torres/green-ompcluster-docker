@@ -11,6 +11,7 @@ sudo docker run -dit --name head --network internalcontainernetwork ompcluster/r
 sudo docker run -dit --name node-01 --network internalcontainernetwork ompcluster/runtime bash
 sudo docker run -dit --rm -v $PWD:/erad-23 ompcluster/runtime:latest bash
 sudo docker run -v $PWD:/moheft -it ompcluster/runtime:latest
+docker run -it --name ompc-runtime-moheft ompc-runtime-moheft
 
 sudo docker attach head
 sudo docker stop head
