@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export CC=clang
+export CXX=clang++
+
+if ! [ -d "$WORK_DIR" ]; then mkdir $WORK_DIR; fi
+cd $WORK_DIR
+
+if [ -d "$PROJECT_DIR" ]; 
+    then 
+        cd $PROJECT_DIR; 
+        git config --global --add safe.directory $PWD;
+        git pull;
+        cd ..; 
+    else 
+        git clone $GIT_REPOSITORY; 
+fi
+
+if ! [ -d "$BUILD_DIR" ]; then mkdir $BUILD_DIR; fi
+cd $BUILD_DIR
+
+cmake $WORK_DIR/llvm-project-moheft/llvm -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;openmp" -DLLVM_USE_LINKER=gold -DLLVM_TARGETS_TO_BUILD="X86;NVPTX" -DLLVM_ENABLE_ASSERTIONS=On -DLIBOMPTARGET_ENABLE_DEBUG=On -DLIBOMPTARGET_ENABLE_PROFILER=On -DLLVM_CCACHE_BUILD=On
+
+make
+
+export PATH=$BUILD_DIR/bin/:$PATH
+export LD_LIBRARY_PATH=$BUILD_DIR/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$BUILD_DIR/lib/:$LIBRARY_PATH
+export CPATH=$BUILD_DIR/projects/openmp/runtime/src:$CPATH

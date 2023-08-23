@@ -1,0 +1,22 @@
+
+Detach container: ^P^Q
+sudo docker ps -a
+sudo docker-compose up -d
+
+sudo docker inspect -f "{{ .NetworkSettings.IPAddress }}" node-01
+
+
+sudo docker network create internalcontainernetwork
+sudo docker run -dit --name head --network internalcontainernetwork ompcluster/runtime bash
+sudo docker run -dit --name node-01 --network internalcontainernetwork ompcluster/runtime bash
+sudo docker run -dit --rm -v $PWD:/erad-23 ompcluster/runtime:latest bash
+sudo docker run -v $PWD:/moheft -it ompcluster/runtime:latest
+
+sudo docker attach head
+sudo docker stop head
+sudo docker rm head
+
+
+
+
+
