@@ -6,10 +6,10 @@ cd ..
 # 02. Create container
 docker run --name ompc-build -v $PWD:/ompc/volume \
     --env WORK_DIR=/ompc/volume/ompc_docker_runtime/project \
-    --env BUILD_DIR=/ompc/volume/ompc_docker_runtime/project/build/ \
+    --env BUILD_DIR=/ompc/volume/ompc_docker_runtime/project/build \
     --env PROJECT_DIR=llvm-project-moheft \
     --env GIT_REPOSITORY=https://gitlab.com/gui.alm02/llvm-project-moheft.git \
-    -it ompc-build
+    -it ompc-build 2
 
 
 # 03. Execute build inside the container 

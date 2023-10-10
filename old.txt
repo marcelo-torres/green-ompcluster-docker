@@ -49,3 +49,7 @@ mpirun -np 4 ./hello-world
 
 clang++ -fopenmp -fopenmp-targets=x86_64-pc-linux-gnu workflow.cc -o workflow && mpirun -np 4 ./workflow
 
+
+clang++ -fopenmp -fopenmp-targets=x86_64-pc-linux-gnu matmul.cc -o matmul
+mpirun -np 4 ./matmul 400 40
+

@@ -12,6 +12,7 @@ RUN apt install mpich libmpich-dev -y
 RUN apt install python3 -y 
 RUN apt install clang -y 
 RUN apt install ccache -y
+RUN apt install ninja-build
 RUN apt install libencode-locale-perl -y
 
 RUN apt install git -y
