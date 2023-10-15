@@ -1,0 +1,4 @@
+https://blogs.cisco.com/performance/tree-based-launch-in-open-mpi
+https://blogs.cisco.com/performance/tree-based-launch-in-open-mpi-part-2
+
+https://medium.com/@kazushi/simulate-high-latency-network-using-docker-containerand-tc-commands-a3e503ea4307

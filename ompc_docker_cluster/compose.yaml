@@ -1,0 +1,62 @@
+
+version: '3'
+services:
+    head:
+        image: "ompc-mpi-base:latest"
+        hostname: head
+        stdin_open: true    # docker run -i
+        tty: true           # docker run -t
+        volumes:
+            - .:/volume/
+        cap_add:
+            - NET_ADMIN
+            
+    worker_a:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_a
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 3
+            resources:
+                limits:
+                  cpus: '0.10'
+                  memory: 50M
+        cap_add:
+            - NET_ADMIN
+ 
+    worker_b:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_b
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '0.50'
+                  memory: 50M
+        cap_add:
+            - NET_ADMIN
+    worker_c:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_c
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 100M
+        cap_add:
+            - NET_ADMIN
+ 
+     
+    
