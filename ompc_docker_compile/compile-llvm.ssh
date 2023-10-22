@@ -9,8 +9,8 @@ cd $WORK_DIR
 if [ -d "$PROJECT_DIR" ]; 
     then 
         cd $PROJECT_DIR; 
-        git checkout $GIT_BRANCH;
         git config --global --add safe.directory $PWD;
+        git checkout $GIT_BRANCH;
         git pull;
         cd ..; 
     else 
