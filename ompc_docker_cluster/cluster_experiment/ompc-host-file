@@ -1,5 +1,8 @@
 cluster_experiment_head_1
-cluster_experiment_worker_a_1:4
-cluster_experiment_worker_b_1:1
-cluster_experiment_worker_c_1:2
+cluster_experiment_worker_a_1:8
+cluster_experiment_worker_a_2:8
+cluster_experiment_worker_b_1:8
+cluster_experiment_worker_b_2:8
+cluster_experiment_worker_c_1:8
+cluster_experiment_worker_c_2:8
 
