@@ -10,6 +10,7 @@
 
 #include <omp.h>
 
+#include "<mpi.h>"
 
 class BlockMatrix {
 private:
@@ -123,8 +124,6 @@ void BlockMatMul_TargetNowait(BlockMatrix &A, BlockMatrix &B, BlockMatrix &C) {
           hostname[1023] = '\0';
           gethostname(hostname, 1023);
           printf("[WORKER][PID=%d] %d x %d x %d | Node: %s\n", getpid(), i, j, k, hostname);
-
-          
 
           #pragma omp parallel for
           for (int ii = 0; ii < BS; ++ii)

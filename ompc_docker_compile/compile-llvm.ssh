@@ -9,11 +9,13 @@ cd $WORK_DIR
 if [ -d "$PROJECT_DIR" ]; 
     then 
         cd $PROJECT_DIR; 
+        git checkout $GIT_BRANCH;
         git config --global --add safe.directory $PWD;
         git pull;
         cd ..; 
     else 
         git clone $GIT_REPOSITORY; 
+        git checkout $GIT_BRANCH;
 fi
 
 if ! [ -d "$BUILD_DIR" ]; then mkdir $BUILD_DIR; fi

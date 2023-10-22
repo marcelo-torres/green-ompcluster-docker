@@ -8,7 +8,7 @@
 #
 
 FILE=./ompc-host-file
-NETWORK_NAME="ompc_docker_cluster_default"
+NETWORK_NAME="cluster_test_default"
 
 
 # Delete file if exists
@@ -39,9 +39,10 @@ container_names=("${container_names[$head_index]}" "${container_names[@]:0:$((he
 # Write ipv4 to host file
 for i in "${!container_names[@]}"
 do
-    ipv4=$(docker inspect -f "{{ .NetworkSettings.Networks.$NETWORK_NAME.IPAddress }}" ${container_names[$i]})
-    echo "${container_names[$i]}: $ipv4"
-    echo $ipv4 >> $FILE
+    name="${container_names[$i]}"
+    ipv4=$(docker inspect -f "{{ .NetworkSettings.Networks.$NETWORK_NAME.IPAddress }}" $name)
+    echo "$name: $ipv4"
+    echo $name >> $FILE # or echo $ipv4 >> $FILE
 done
 
 echo "Entries added to $FILE"

@@ -19,7 +19,7 @@ services:
         volumes:
             - .:/volume/
         deploy:
-            replicas: 3
+            replicas: 0
             resources:
                 limits:
                   cpus: '0.10'

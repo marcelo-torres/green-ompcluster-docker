@@ -9,21 +9,26 @@ docker run --name ompc-build -v $PWD:/ompc/volume \
     --env BUILD_DIR=/ompc/volume/ompc_docker_runtime/project/build \
     --env PROJECT_DIR=llvm-project-moheft \
     --env GIT_REPOSITORY=https://gitlab.com/gui.alm02/llvm-project-moheft.git \
+    --env GIT_BRANCH=master
     -it ompc-build
 
 
 # 03. Execute build inside the container 
-./ompc/compile-llvm.ssh
+. ompc/compile-llvm.ssh
 
 
 # 04. Create OMPC runtime
 cd ompc_docker_runtime && docker build -t ompc-runtime-moheft --build-arg BUILD_DIR=./project/build .
 
-# 05. Run a cluster of containers with OMPC
+# 05. Start a cluster.
 cd ompc_docker_cluster
-sh generate_hostfile.sh
+cd cluster_experiment # or cd cluster_test
+sh start_cluster.sh
+docker attach cluster_experiment_head_1 # or cd cluster_test_head_1
 
-# 06. Run:
+# 06. Execute an application:
+# -np 8 = 1 MPI process to head and 7 to worker nodes
 cd /volume/examples/matmul
 export OMPCLUSTER_SCHEDULER=nheft
 mpirun -np 8 --hostfile /volume/ompc-host-file  ./matmul 80 20
+
