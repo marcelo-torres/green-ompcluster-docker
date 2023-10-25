@@ -8,6 +8,7 @@ FROM ompc-runtime-moheft
 RUN mkdir /root/.ssh
 ADD id_rsa /root/.ssh
 ADD id_rsa.pub /root/.ssh/
+RUN chmod 0700 /root/.ssh/*
 WORKDIR /root/.ssh
 RUN cat id_rsa.pub >> authorized_keys && rm -f id_rsa.pub
 RUN echo "Host *" >> ~/.ssh/config && echo "    StrictHostKeyChecking no" >> ~/.ssh/config
