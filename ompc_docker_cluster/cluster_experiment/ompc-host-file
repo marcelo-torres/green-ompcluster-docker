@@ -1,8 +1,6 @@
-cluster_experiment_head_1
-cluster_experiment_worker_a_1:8
-cluster_experiment_worker_a_2:8
-cluster_experiment_worker_b_1:8
-cluster_experiment_worker_b_2:8
-cluster_experiment_worker_c_1:8
-cluster_experiment_worker_c_2:8
-
+cluster_experiment-head_1-1
+cluster_experiment-dc-01-standard-1-1:4
+cluster_experiment-dc-02-standard-1-1:8
+cluster_experiment-dc-03-standard-2-1:8
+cluster_experiment-dc-04-standard-2-1:16
+cluster_experiment-dc-05-standard-4-1:16

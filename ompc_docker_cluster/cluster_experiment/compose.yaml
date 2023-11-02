@@ -19,7 +19,7 @@ services:
         volumes:
             - .:/volume/
         deploy:
-            replicas: 4
+            replicas: 1
             resources:
                 limits:
                   cpus: '4.0'
@@ -35,7 +35,7 @@ services:
         volumes:
             - .:/volume/
         deploy:
-            replicas: 8
+            replicas: 1
             resources:
                 limits:
                   cpus: '8.0'
@@ -51,7 +51,7 @@ services:
         volumes:
             - .:/volume/
         deploy:
-            replicas: 4
+            replicas: 1
             resources:
                 limits:
                   cpus: '8.0'
@@ -67,7 +67,7 @@ services:
         volumes:
             - .:/volume/
         deploy:
-            replicas: 8
+            replicas: 1
             resources:
                 limits:
                   cpus: '16.0'
@@ -83,7 +83,7 @@ services:
         volumes:
             - .:/volume/
         deploy:
-            replicas: 4
+            replicas: 1
             resources:
                 limits:
                   cpus: '16.0'
