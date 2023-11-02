@@ -11,51 +11,84 @@ services:
         cap_add:
             - NET_ADMIN
             
-    worker_a:
+    dc-01-standard-1:
         image: "ompc-mpi-base:latest"
-        hostname: worker_a
+        hostname: dc-01-standard-1
         stdin_open: true 
         tty: true
         volumes:
             - .:/volume/
         deploy:
-            replicas: 2
+            replicas: 4
             resources:
                 limits:
                   cpus: '4.0'
-                  memory: 50M
+                  memory: 16G
         cap_add:
             - NET_ADMIN
  
-    worker_b:
+    dc-02-standard-1:
         image: "ompc-mpi-base:latest"
-        hostname: worker_b
+        hostname: dc-02-standard-1
         stdin_open: true 
         tty: true
         volumes:
             - .:/volume/
         deploy:
-            replicas: 2
+            replicas: 8
             resources:
                 limits:
-                  cpus: '2.0'
-                  memory: 50M
+                  cpus: '8.0'
+                  memory: 32G
         cap_add:
             - NET_ADMIN
             
-    worker_c:
+    dc-03-standard-2:
         image: "ompc-mpi-base:latest"
-        hostname: worker_c
+        hostname: dc-03-standard-2
         stdin_open: true 
         tty: true
         volumes:
             - .:/volume/
         deploy:
-            replicas: 2
+            replicas: 4
             resources:
                 limits:
-                  cpus: '1.0'
-                  memory: 100M
+                  cpus: '8.0'
+                  memory: 32G
         cap_add:
             - NET_ADMIN
+            
+    dc-04-standard-2:
+        image: "ompc-mpi-base:latest"
+        hostname: dc-04-standard-2
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 8
+            resources:
+                limits:
+                  cpus: '16.0'
+                  memory: 64G
+        cap_add:
+            - NET_ADMIN
+    
+    dc-05-standard-4:
+        image: "ompc-mpi-base:latest"
+        hostname: dc-05-standard-4
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 4
+            resources:
+                limits:
+                  cpus: '16.0'
+                  memory: 64G
+        cap_add:
+            - NET_ADMIN
+    
     
