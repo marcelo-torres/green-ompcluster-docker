@@ -5,6 +5,14 @@ FROM ompc-runtime-moheft
 #WORKDIR /home/mpiuser
 #RUN mkdir .ssh && chmod 0700 .ssh
 #USER root
+
+# SSH 
+RUN apt install openssh-server -y
+RUN apt install ufw -y
+#RUN apt install systemd -y
+RUN systemctl enable ssh
+#RUN /etc/init.d/dbus start
+
 RUN mkdir /root/.ssh
 ADD id_rsa /root/.ssh
 ADD id_rsa.pub /root/.ssh/

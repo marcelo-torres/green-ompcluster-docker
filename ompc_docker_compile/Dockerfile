@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* 
 	&& localedef -i pt_BR -c -f UTF-8 -A /usr/share/locale/locale.alias pt_BR.UTF-8
 
 RUN apt update
+RUN apt-get update
 
 # MPI + CLANG
 RUN apt install cmake -y 
@@ -31,12 +32,7 @@ RUN pip install virtualenv
 # Use "source venv/bin/activate" do access de virtual env
 RUN cd /ompcbench && python3 -m virtualenv venv && venv/bin/pip install -e ".[dev]"
 
-# SSH 
-RUN apt install openssh-server -y
-RUN apt install ufw -y
-#RUN apt install systemd -y
-RUN systemctl enable ssh
-#RUN /etc/init.d/dbus start
+
 RUN apt install nano -y
 
 RUN mkdir /ompc/
