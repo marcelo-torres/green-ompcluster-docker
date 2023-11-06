@@ -10,8 +10,8 @@ if [ ! "$image_exists" ]; then
 fi
 
 
-docker-compose stop
-docker-compose up -d || exit 1
+docker compose stop
+docker compose up -d || exit 1
 
 echo "\n"
 bash set-network-delay.sh
