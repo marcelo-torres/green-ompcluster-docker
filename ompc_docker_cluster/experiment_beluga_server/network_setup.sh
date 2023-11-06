@@ -120,24 +120,25 @@ dc03_network="0_dc_03"
 dc04_network="0_dc_04"
 
 dc01_proxy="proxy_dc01-1"
+dc02_proxy="proxy_dc02-1"
+dc03_proxy="proxy_dc03-1"
+dc04_proxy="proxy_dc04-1"
+
 dc01_containers=('worker_dc01_c1-1' 'worker_dc01_c1-2' 'worker_dc01_c1-3' 'worker_dc01_c1-4' 'worker_dc01_c1-5' 'worker_dc01_c1-6' 'worker_dc01_c1-7' 'worker_dc01_c1-8')
 dc01_target_networks=($dc02_network $dc03_network $dc04_network $global_network)
 dc01_target_local_networks=($dc02_network $dc03_network $dc04_network)
 dc01_target_proxies=($dc02_proxy $dc03_proxy $dc04_proxy)
 
-dc02_proxy="proxy_dc02-1"
 dc02_containers=('worker_dc02_c1-1' 'worker_dc02_c1-2' 'worker_dc02_c2-1' 'worker_dc02_c2-2' 'worker_dc02_c2-3' 'worker_dc02_c2-4')
 dc02_target_networks=($dc01_network $dc03_network $dc04_network $global_network)
 dc02_target_local_networks=($dc01_network $dc03_network $dc04_network)
 dc02_target_proxies=($dc01_proxy $dc03_proxy $dc04_proxy)
 
-dc03_proxy="proxy_dc03-1"
 dc03_containers=('worker_dc03_c1-1' 'worker_dc03_c2-1' 'worker_dc03_c4-1')
 dc03_target_networks=($dc01_network $dc02_network $dc04_network $global_network)
 dc03_target_local_networks=($dc01_network $dc02_network $dc04_network)
 dc03_target_proxies=($dc01_proxy $dc02_proxy $dc04_proxy)
 
-dc04_proxy="proxy_dc04-1"
 dc04_containers=('worker_dc04_c2-1' 'worker_dc04_c2-2' 'worker_dc04_c4-1' 'worker_dc04_c4-2' 'worker_dc04_c4-3' 'worker_dc04_c4-4')
 dc04_target_networks=($dc01_network $dc02_network $dc03_network $global_network)
 dc04_target_local_networks=($dc01_network $dc02_network $dc03_network)
