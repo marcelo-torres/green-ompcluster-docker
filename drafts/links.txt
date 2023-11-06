@@ -8,3 +8,5 @@ https://medium.com/hackernoon/network-emulation-for-docker-containers-f4d36b656c
 https://cloudfanatic.net/crm/index.php/knowledgebase/27/How-to-Limit-CPU-Usage-of-a-Process-in-Linux-with-CPULimit.html
 
 https://github.com/pmodels/mpich/blob/main/doc/wiki/how_to/Using_the_Hydra_Process_Manager.md
+
+https://www.cyberciti.biz/faq/ip-route-add-network-command-for-linux-explained/
