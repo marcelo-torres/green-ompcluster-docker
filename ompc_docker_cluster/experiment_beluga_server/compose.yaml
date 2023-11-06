@@ -1,0 +1,269 @@
+version: '3'
+services:
+    head:
+        image: "ompc-mpi-base:latest"
+        hostname: head
+        stdin_open: true    # docker run -i
+        tty: true           # docker run -t
+        volumes:
+            - .:/volume/
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 1_global
+            
+            
+# * * * * * * * * * * * * * * * * * *  \/  * * * * * * * * * * * * * * * * * * #
+#                                                                              #
+#                                 DATA CENTER 01                               #
+#                                                                              #
+# * * * * * * * * * * * * * * * * * *  /\  * * * * * * * * * * * * * * * * * * #
+    proxy_dc01:
+        image: "ompc-mpi-base:latest"
+        hostname: proxy_dc01
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_01
+            - 1_global
+    
+    worker_dc01_c1:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc01_c1
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 8
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_01
+    
+                
+                
+# * * * * * * * * * * * * * * * * * *  \/  * * * * * * * * * * * * * * * * * * #
+#                                                                              #
+#                                 DATA CENTER 02                               #
+#                                                                              #
+# * * * * * * * * * * * * * * * * * *  /\  * * * * * * * * * * * * * * * * * * #
+    proxy_dc02:
+        image: "ompc-mpi-base:latest"
+        hostname: proxy_dc02
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_02
+            - 1_global
+                
+    worker_dc02_c1:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc02_c1
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 2
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_02
+                
+    worker_dc02_c2:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc02_c2
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 4
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 8G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_02              
+
+# * * * * * * * * * * * * * * * * * *  \/  * * * * * * * * * * * * * * * * * * #
+#                                                                              #
+#                                 DATA CENTER 03                               #
+#                                                                              #
+# * * * * * * * * * * * * * * * * * *  /\  * * * * * * * * * * * * * * * * * * #
+    proxy_dc03:
+        image: "ompc-mpi-base:latest"
+        hostname: proxy_dc03
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_03
+            - 1_global
+
+    worker_dc03_c1:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc03_c1
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_03
+                
+    worker_dc03_c2:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc03_c2
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 8G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_03
+                
+    worker_dc03_c4:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc03_c4
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '4.0'
+                  memory: 16G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_03
+
+# * * * * * * * * * * * * * * * * * *  \/  * * * * * * * * * * * * * * * * * * #
+#                                                                              #
+#                                 DATA CENTER 05                               #
+#                                                                              #
+# * * * * * * * * * * * * * * * * * *  /\  * * * * * * * * * * * * * * * * * * #
+    proxy_dc04:
+        image: "ompc-mpi-base:latest"
+        hostname: proxy_dc04
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_04
+            - 1_global
+
+    worker_dc04_c2:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc04_c2
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 2
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 8G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_04
+                
+    worker_dc04_c4:
+        image: "ompc-mpi-base:latest"
+        hostname: worker_dc04_c4
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 4
+            resources:
+                limits:
+                  cpus: '4.0'
+                  memory: 16G
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - 0_dc_04
+
+# * * * * * * * * * * * * * * * * * *  \/  * * * * * * * * * * * * * * * * * * #
+#                                                                              #
+#                                   NETWORKS                                   #
+#                                                                              #
+# * * * * * * * * * * * * * * * * * *  /\  * * * * * * * * * * * * * * * * * * #
+
+networks:
+    0_dc_01:
+    0_dc_02:
+    0_dc_03:
+    0_dc_04:
+    1_global:    
