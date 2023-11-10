@@ -4,10 +4,11 @@
 #echo "[i] Use 'docker attach $head_container' to attach to the head node"
 
 prefix="get_metrics"
-separator="_"
+separator="-"
 
-head_container="head_1"
-containers=('worker_c1_1' 'worker_c2_1' 'worker_c4_1')
+head_container='head'$separator'1'
+containers=('worker_c1'$separator'1' 'worker_c2'$separator'1' 'worker_c4'$separator'1')
+
 
 EXECUTIONS_PER_CONTAINER=10
 APPLICATION_DIR=/volume/application
@@ -38,7 +39,7 @@ do
                 echo "$trace_dir will be deleted."
                 rm -r $trace_dir
             fi
-            mkdir $trace_dir
+            mkdir -p $trace_dir
             
             # Set OMPC trace variables
             export full_trace_file_prefix="$trace_dir/$trace_file_prefix"
@@ -51,7 +52,7 @@ do
             echo -e "$head_container_full_name\n$worker_container:1" >> $HOST_FILE
             
             # Run application
-            mpirun -np 2 --hostfile $HOST_FILE ./matmul 80 40
+            mpirun -np 2 --hostfile $HOST_FILE ./matmul 40 20
 
             # Merge output
             merged_trace_file="$trace_file_prefix"".json"
