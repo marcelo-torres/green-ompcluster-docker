@@ -1,0 +1,66 @@
+version: '3'
+services:
+    head:
+        image: "ompc-mpi-base:latest"
+        hostname: head
+        stdin_open: true    # docker run -i
+        tty: true           # docker run -t
+        volumes:
+            - .:/volume/
+        cap_add:
+            - NET_ADMIN
+            
+# * * * * * * * * * * * * * * * * * *  \/  * * * * * * * * * * * * * * * * * * #
+#                                                                              #
+#                                 W O R K E R S                                #
+#                                                                              #
+# * * * * * * * * * * * * * * * * * *  /\  * * * * * * * * * * * * * * * * * * #
+
+    worker_c1:
+        image: "ompc-mpi-base:latest"
+        hostname: get_metrics_worker_c1
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
+        cap_add:
+            - NET_ADMIN
+                
+    worker_c2:
+        image: "ompc-mpi-base:latest"
+        hostname: get_metrics_worker_c2
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '2.0'
+                  memory: 8G
+        cap_add:
+            - NET_ADMIN
+                
+    worker_c4:
+        image: "ompc-mpi-base:latest"
+        hostname: get_metrics_worker_c4
+        stdin_open: true 
+        tty: true
+        volumes:
+            - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '4.0'
+                  memory: 16G
+        cap_add:
+            - NET_ADMIN
+   
