@@ -4,10 +4,7 @@
 #echo "[i] Use 'docker attach $head_container' to attach to the head node"
 
 prefix="get_metrics"
-separator="-"
-
-head_container='head'$separator'1'
-containers=('worker_c1'$separator'1' 'worker_c2'$separator'1' 'worker_c4'$separator'1')
+separator="_"
 
 head_container='head'$separator'1'
 containers=('worker_c1'$separator'1' 'worker_c2'$separator'1' 'worker_c4'$separator'1')
@@ -95,7 +92,13 @@ do
     tasks_durations_files_arg=${tasks_durations_files_arg:1}
     echo $tasks_durations_files
     
-    python3 mean_tasks_durations.py "$relative_path_to_trace""$trace_file_prefix""_mean_durations.csv" $tasks_durations_files
+    tasks_mean_duration_file="$relative_path_to_trace""$trace_file_prefix""_mean_durations.csv"
+    python3 mean_tasks_durations.py $tasks_mean_duration_file $tasks_durations_files
+    
+    
+    tasks_estimates="$relative_path_to_trace""$trace_file_prefix""_mean_durations_and_energy.csv"
+    power="${containers_power[$i]}"
+    python3 estimate_task_energy_usage.py $tasks_mean_duration_file $tasks_estimates $power
     
     #cat tracing.json | jq . > tracing_formatted.json
     #dot -Tpdf worker_c4_1_graph_0.dot > graph_0.pdf
