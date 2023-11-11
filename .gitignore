@@ -1,2 +1,3 @@
 ompc_docker_runtime/project
 local/
+ompc_docker_cluster/get_metrics/application/traces/
