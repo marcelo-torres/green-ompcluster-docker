@@ -6,8 +6,20 @@
 prefix="get_metrics"
 separator="_"
 
-head_container="head_1"
-containers=('worker_c1_1' 'worker_c2_1' 'worker_c4_1')
+head_container='head'$separator'1'
+containers=('worker_c1'$separator'1' 'worker_c2'$separator'1' 'worker_c4'$separator'1')
+
+# AMD EPYC 7453 
+#   TDP: 225W
+#   Cores: 28
+#
+# Pc = 225W / 28 = 8.03571428571W
+#
+#
+# 1 x Pc ~  8.03571W
+# 2 x Pc ~ 16.07143W
+# 4 x Pc ~ 32.14286W
+containers_power=(8.03571 16.07143 32.14286)
 
 EXECUTIONS_PER_CONTAINER=10
 APPLICATION_DIR=/volume/application
