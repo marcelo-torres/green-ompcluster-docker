@@ -174,7 +174,7 @@ def generate_task_energy_consumption_file(power_usages):
         
         f.write('OMPCLUSTER_MOHEFT_CONS_P_x_P_y' + '\n')
         for source_file in power_usages:
-            energy_usage_communication = ['1' for i in enumerate(power_usages)]
+            energy_usage_communication = ['0' for i in enumerate(power_usages)]
             row =','.join(energy_usage_communication) # TODO
             f.write(row + '\n')
 
