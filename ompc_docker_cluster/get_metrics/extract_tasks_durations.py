@@ -48,7 +48,7 @@ def sortByTaskId(task_id_duration):
   return task_id_duration[0]
 
 def tune_tasks_duration(tasks_duration):
-    tasks_duration.sort(key=sortByTaskId)
+    #tasks_duration.sort(key=sortByTaskId)
     first_id = tasks_duration[0][0]
     first_id-=1
 
