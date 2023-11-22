@@ -14,7 +14,7 @@ HOST_FILE=/volume/ompc-host-file
 # Application Variables
 execution_graph_height=7
 execution_graph_width=7
-execution_iterations=2000000
+execution_iterations=4000000
 #execution_iterations=1073741824 # 1024 * 1024 * 1024
 
 cd /ompcbench/
@@ -41,11 +41,17 @@ do
     for g in "${!graph_types[@]}"
     do
         graph_type="${graph_types[$g]}"
+        
+        # Remove spaces
+        oldstr=" "
+        newstr="_"
+        graph_type_without_space=$(echo $graph_type | sed "s/$oldstr/$newstr/g")
+        echo $
     
         tasks_durations_files=()
         for exec in $(seq 1 $EXECUTIONS_PER_CONTAINER)
         do
-            trace_file_prefix="$graph_type""_""${containers[$i]}"
+            trace_file_prefix="$graph_type_without_space""_""${containers[$i]}"
             must_execute=1
             while [ $must_execute -ne 0 ]
             do
@@ -54,7 +60,7 @@ do
               
                 # Prepare context
                 cd $APPLICATION_DIR
-                relative_trace_dir="traces/${containers[$i]}/$graph_type/$exec"
+                relative_trace_dir="traces/${containers[$i]}/$graph_type_without_space/$exec"
                 trace_dir="$APPLICATION_DIR/$relative_trace_dir"
                 if [ -d "$trace_dir" ]; then
                     echo "$trace_dir will be deleted."
