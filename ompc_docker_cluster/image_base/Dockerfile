@@ -14,5 +14,7 @@ RUN cat id_rsa.pub >> authorized_keys && rm -f id_rsa.pub
 RUN echo "Host *" >> ~/.ssh/config && echo "    StrictHostKeyChecking no" >> ~/.ssh/config
 RUN apt install iproute2 iputils-ping -y
 WORKDIR /
+ADD get_task_bench.sh /
+RUN . /get_task_bench.sh 
 CMD eval `ssh-agent` && ssh-add /root/.ssh/id_rsa && service ssh start && . /ompc/set-clang.ssh && /bin/bash 
 
