@@ -92,7 +92,7 @@ do
         tasks_durations_files_arg=${tasks_durations_files_arg:1}
         echo $tasks_durations_files
         
-        tasks_mean_duration_file="$iteration_trace_dir/$trace_file_prefix""_mean_durations.csv"
+        tasks_mean_duration_file="$iteration_trace_dir/$container_name-iter_$iterations""_mean_durations.csv"
         python3 mean_tasks_durations.py $tasks_mean_duration_file $tasks_durations_files
     done
 done
