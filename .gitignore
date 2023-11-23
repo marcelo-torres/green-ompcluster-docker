@@ -2,4 +2,5 @@ ompc_docker_runtime/project
 local/
 ompc_docker_cluster/get_metrics/application/traces/
 ompc_docker_cluster/get_metrics/traces/
+ompc_docker_cluster/get_metrics/tasks_durations/
 ompc_docker_cluster/get_metrics/ompc-host-file
