@@ -1,6 +1,10 @@
 from csv import reader  
+import os
+import shutil
 
-DEFAULT_ROUND = 2
+from datetime import datetime, timedelta
+
+DEFAULT_ROUND = 8
 
 def get_cluster_files(worker_c1_file, worker_c2_file, worker_c4_file):
     cluster_files = []
@@ -60,29 +64,34 @@ def get_cluster_energy_usage(c1_power, c2_power, c4_power):
     return power_usages
 
 
-def get_cluster_green_energy_files(dc01_file, dc02_file, dc03_file, dc04_file):
+def get_cluster_green_energy_files(
+        dc01_file, dc01_init_timedelta,
+        dc02_file, dc02_init_timedelta,
+        dc03_file, dc03_init_timedelta,
+        dc04_file, dc04_init_timedelta
+        ):
     cluster_files = []
 
-    def append_machines_to_cluster(count, model, pv_area):
+    def append_machines_to_cluster(count, model, pv_area, init_timedelta):
         for i in range(count):
             cluster_files.append(
-                (model, pv_area)
+                (model, pv_area, init_timedelta)
             )
 
     # Head
-    append_machines_to_cluster(1, dc01_file, 1)
+    append_machines_to_cluster(1, dc01_file, 1, dc01_init_timedelta)
 
     # DC-01
-    append_machines_to_cluster(8, dc01_file, 1)
+    append_machines_to_cluster(8, dc01_file, 1, dc01_init_timedelta)
 
     # DC-02
-    append_machines_to_cluster(6, dc02_file, 1)
+    append_machines_to_cluster(6, dc02_file, 1, dc02_init_timedelta)
 
     # DC-03
-    append_machines_to_cluster(3, dc03_file, 1)
+    append_machines_to_cluster(3, dc03_file, 1, dc03_init_timedelta)
 
     # DC-04
-    append_machines_to_cluster(6, dc04_file, 1)
+    append_machines_to_cluster(6, dc04_file, 1, dc04_init_timedelta)
 
     return cluster_files
 
@@ -123,15 +132,37 @@ def get_tasks_energy_usage(source_file):
         return energy_usages
 
 
-def get_green_energy_available(source_file, pv_area):
+def to_datetime_from_string(dt_str):
+    dt_str = dt_str.split(' ')
+    date = dt_str[0]
+    date = list(map(int, date.split('-')))
+    time = dt_str[1]
+    time = list(map(int, time.split(':')))
+
+    return datetime(date[0], date[1], date[2], time[0], time[1], time[2])
+
+
+def get_green_energy_available(source_file, pv_area, init_timedelta):
     
     with open(source_file, 'r') as file:
         csv_reader = reader(file)
         
+        init_dt_time = None
+
         solar_irradiance_list= []
         for line, row in enumerate(csv_reader):
             if line == 0:
                 continue # skip header
+
+            dt = to_datetime_from_string(row[0])
+
+            if line == 1 and init_timedelta is not None:
+                init_dt_time = dt + init_timedelta
+                print(init_dt_time)
+
+            if dt < init_dt_time:
+                continue
+
             solar_irradiance_in_W_m2 = float(row[2])
             solar_irradiance = pv_area * solar_irradiance_in_W_m2
             solar_irradiance = round(solar_irradiance, DEFAULT_ROUND)
@@ -142,12 +173,11 @@ def get_green_energy_available(source_file, pv_area):
         return solar_irradiance_list
     
 
-def generate_task_graph_file(cluster_files):
+def generate_task_graph_file(cluster_files, file_location, graph='1'):
 
-    graph = '1'
     graph_name = f'OMPCLUSTER_HEFT_TASKS_GRAPH_{graph}'
 
-    with open(graph_name, 'w') as f:
+    with open(file_location + graph_name, 'w') as f:
         f.write(graph_name + '\n')
         f.write('OMPCLUSTER_HEFT_COMP_G_x_P_y_T_z' + '\n')
 
@@ -185,21 +215,24 @@ def generate_green_energy_available_file(cluster_green_energy_files):
         f.write(file_name + '\n')
         f.write('OMPCLUSTER_MOHEFT_GREEN_P_x_I_y' + '\n')
 
-        for source_file, pv_area in cluster_green_energy_files:
-            green_energy_available = get_green_energy_available(source_file, pv_area)
+        for source_file, pv_area, init_timedelta in cluster_green_energy_files:
+            green_energy_available = get_green_energy_available(source_file, pv_area, init_timedelta)
             row =','.join(green_energy_available)
             f.write(row + '\n')
 
 
-if __name__ == '__main__':
-    worker_c1_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c1_1/worker_c1_1_mean_durations.csv'
-    worker_c2_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c2_1/worker_c2_1_mean_durations.csv'
-    worker_c4_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c4_1/worker_c4_1_mean_durations.csv'
+def generate_no_green_energy_available_file(lines, columns):
+    file_name = 'OMPCLUSTER_MOHEFT_GREEN_ENER'
+    with open(file_name, 'w') as f:
+        f.write(file_name + '\n')
+        f.write('OMPCLUSTER_MOHEFT_GREEN_P_x_I_y' + '\n')
 
-    dc01_file = './../photovolta/data/splitted/selected/m282-29_photovolta_2016_part_1_17.csv'
-    dc02_file = './../photovolta/data/splitted/selected/m166-13_photovolta_2016_part_1_7.csv'
-    dc03_file = './../photovolta/data/splitted/selected/m280-19_photovolta_2016_part_1_13.csv'
-    dc04_file = './../photovolta/data/splitted/selected/m38-05_photovolta_2016_part_2_4.csv'
+        for i in range(lines): 
+            row =','.join('0' * columns)
+            f.write(row + '\n')
+
+
+if __name__ == '__main__':
 
     # AMD EPYC 7453 
     #   TDP: 225W
@@ -215,12 +248,98 @@ if __name__ == '__main__':
     c2_power = 16.07143
     c4_power = 32.14286
 
-    cluster_files = get_cluster_files(worker_c1_file, worker_c2_file, worker_c4_file)
-    generate_task_graph_file(cluster_files)
-
     power_usages = get_cluster_energy_usage(c1_power, c2_power, c4_power)
     generate_task_energy_consumption_file(power_usages)
 
-    cluster_green_energy_files = get_cluster_green_energy_files(dc01_file, dc02_file, dc03_file, dc04_file)
-    generate_green_energy_available_file(cluster_green_energy_files)
+    generate_no_green_energy_available_file(24, 100)
+
+    experiment_1 = ['experiment_1']
+    experiment_2 = ['experiment_2_1', 'experiment_2_2', 'experiment_2_3', 'experiment_2_4']
+    
+    for experiment in experiment_1 + experiment_2:
+        if not os.path.exists(experiment):
+            os.mkdir(experiment)
+
+    topologies = [
+        'trivial',
+        'stencil_1d',
+        'stencil_1d_periodic',
+        'dom',
+        'tree',
+        'fft',
+        'nearest',
+        'no_comm',
+        'spread -period 2',
+        'random_nearest',
+    ]
+
+    base_path = './../ompc_docker_cluster/get_metrics/tasks_durations/'
+
+    for topology in topologies:
+        worker_c1_file = f'{base_path}/{topology}/worker_c1_1.csv'
+        worker_c2_file = f'{base_path}/{topology}/worker_c2_1.csv'
+        worker_c4_file = f'{base_path}/{topology}/worker_c4_1.csv'
+
+        location = f'experiment_1/{topology}/'
+        if os.path.exists(location):
+            shutil.rmtree(location)
+        os.mkdir(location)
+
+        shutil.copyfile('OMPCLUSTER_HEFT_RANKS', f'{location}OMPCLUSTER_HEFT_RANKS')
+        shutil.copyfile('OMPCLUSTER_MOHEFT_ENER_CONS', f'{location}OMPCLUSTER_MOHEFT_ENER_CONS')
+        shutil.copyfile('OMPCLUSTER_MOHEFT_SEL_CRIT', f'{location}OMPCLUSTER_MOHEFT_SEL_CRIT')
+        shutil.copyfile('OMPCLUSTER_MOHEFT_GREEN_ENER', f'{location}OMPCLUSTER_MOHEFT_GREEN_ENER')
+  
+        cluster_files = get_cluster_files(worker_c1_file, worker_c2_file, worker_c4_file)
+        generate_task_graph_file(cluster_files, location, graph=1)
+        generate_task_graph_file(cluster_files, location, graph=2)
+    exit
+
+    #worker_c1_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c1_1/worker_c1_1_mean_durations.csv'
+    #worker_c2_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c2_1/worker_c2_1_mean_durations.csv'
+    #worker_c4_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c4_1/worker_c4_1_mean_durations.csv'
+
+    dc01_file = './../photovolta/data/splitted/selected/m282-29_photovolta_2016_part_1_17.csv'
+    dc02_file = './../photovolta/data/splitted/selected/m166-13_photovolta_2016_part_1_7.csv'
+    dc03_file = './../photovolta/data/splitted/selected/m280-19_photovolta_2016_part_1_13.csv'
+    dc04_file = './../photovolta/data/splitted/selected/m33-86_photovolta_2016_part_2_4.csv'
+
+    dc01_time = 0
+    dc02_time = 6
+    dc03_time = 12
+    dc04_time = 18
+
+    for i in range(4):
+        dc01_time += 6 * i
+        dc02_time += 6 * i
+        dc03_time += 6 * i
+        dc04_time += 6 * i
+
+        cluster_green_energy_files = get_cluster_green_energy_files(
+            dc01_file, timedelta(hours=dc01_time),
+            dc02_file, timedelta(hours=dc02_time),
+            dc03_file, timedelta(hours=dc03_time),
+            dc04_file, timedelta(hours=dc04_time)
+        )
+
+        generate_green_energy_available_file(cluster_green_energy_files)
+
+        experiment = experiment_2[i]
+
+        for topology in topologies:
+            location = f'{experiment}/{topology}/'
+            if os.path.exists(location):
+                shutil.rmtree(location)
+            os.mkdir(location)
+
+            shutil.copyfile('OMPCLUSTER_HEFT_RANKS', f'{location}OMPCLUSTER_HEFT_RANKS')
+            shutil.copyfile('OMPCLUSTER_MOHEFT_ENER_CONS', f'{location}OMPCLUSTER_MOHEFT_ENER_CONS')
+            shutil.copyfile('OMPCLUSTER_MOHEFT_SEL_CRIT', f'{location}OMPCLUSTER_MOHEFT_SEL_CRIT')
+            shutil.copyfile('OMPCLUSTER_MOHEFT_GREEN_ENER', f'{location}OMPCLUSTER_MOHEFT_GREEN_ENER')
+
+            exp1_location = f'experiment_1/{topology}/'
+            shutil.copyfile(f'{exp1_location}OMPCLUSTER_HEFT_TASKS_GRAPH_1', f'{location}OMPCLUSTER_HEFT_TASKS_GRAPH_1')
+
+        
+        
     

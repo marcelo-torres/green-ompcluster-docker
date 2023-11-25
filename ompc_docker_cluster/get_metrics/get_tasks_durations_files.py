@@ -95,12 +95,11 @@ def generate_tasks_durations_and_save(graph_sizes, workers_tasks_durations_list,
 if __name__ == '__main__':
 
     seed = 1700704603
-    graph_type_sizes_file='./graph_type_sizes_1000x7.csv'
+    graph_type_sizes_file='./graph_type_sizes_20x10.csv'
 
-    iterations = [1024, 1048576, 1073741824]
+    iterations = [8589934592, 34359738368, 68719476736]
     workers=['worker_c1_1', 'worker_c2_1', 'worker_c4_1']
    
     graph_sizes = get_graph_sizes(graph_type_sizes_file)
     workers_tasks_durations_list = get_mean_durations_from_workers_list(iterations, workers)
-
     generate_tasks_durations_and_save(graph_sizes, workers_tasks_durations_list, seed)

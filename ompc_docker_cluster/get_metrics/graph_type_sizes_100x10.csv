@@ -1,0 +1,11 @@
+graph type,number of tasks
+trivial, 1000
+stencil_1d, 1000
+stencil_1d_periodic, 1000
+dom, 910
+tree, 975
+fft, 1000
+nearest, 1000
+no_comm, 1000
+spread -period 2, 1000
+random_nearest, 1000

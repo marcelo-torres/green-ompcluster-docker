@@ -1,7 +1,7 @@
 #!/bin/bash
 
-steps=1000
-with=7
+steps=20
+with=10
 basic_types=(
     trivial
     stencil_1d
@@ -23,7 +23,7 @@ echo -e "graph type,number of tasks" > $file
 
 export OMPCLUSTER_SCHEDULER=heft
 for t in "${basic_types[@]}"; do
-    line=$(mpirun -np 1 /task-bench/ompcluster/main -steps 1000 -width 7 -type $t $compute_bound | grep "Total Tasks")
+    line=$(mpirun -np 1 /task-bench/ompcluster/main -steps $steps -width $with -type $t $compute_bound | grep "Total Tasks")
     tasks=$( echo $line | tr -d -c 0-9)
     echo "$t: $tasks"
     echo -e "$t, $tasks" >> $file

@@ -13,11 +13,24 @@ prefix="get_metrics"
 separator="_"
 
 head_container='head'$separator'1'
-containers=('worker_c1'$separator'1' 'worker_c2'$separator'1' 'worker_c4'$separator'1')
+containers=(
+    'worker_c1'$separator'1'
+    'worker_c2'$separator'1'
+    'worker_c4'$separator'1'
+)
 execution_iterations=(
-    1024
-    1048576 # 1024 * 1024
-    1073741824 # 1024 * 1024 * 1024
+    536870912 # 2^29
+    8589934592 # 2^33
+    17179869184 # 2^34
+    34359738368 # 2^35
+    
+    #68719476736 # 2^36
+   
+   
+    # > 6 minutes
+    #137438953472 # 2^37
+    #274877906944 # 2^38
+    #549755813888 # 2^39
 )
 executions_per_container=10
 

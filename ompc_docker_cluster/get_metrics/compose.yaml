@@ -7,6 +7,12 @@ services:
         tty: true           # docker run -t
         volumes:
             - .:/volume/
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                  cpus: '1.0'
+                  memory: 4G
         cap_add:
             - NET_ADMIN
             
