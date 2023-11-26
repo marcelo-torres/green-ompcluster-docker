@@ -20,7 +20,7 @@ private:
   const long nCols;
   const int nBlocksPerRow;
   const int nBlocksPerCol;
-  std::vector<std::vector<std::unique_ptr<long[]>>> Blocks;
+  std::vector<std::vector<std::unique_ptr<double[]>>> Blocks;
 
 public:
   BlockMatrix(const int _rowsPerBlock, const int _colsPerBlock,
@@ -30,16 +30,16 @@ public:
         nBlocksPerCol(_nCols / _colsPerBlock), Blocks(nBlocksPerCol) {
     for (int i = 0; i < nBlocksPerCol; i++) {
       for (int j = 0; j < nBlocksPerRow; j++) {
-        Blocks[i].emplace_back(new long[_rowsPerBlock * _colsPerBlock]);
+        Blocks[i].emplace_back(new double[_rowsPerBlock * _colsPerBlock]);
       }
     }
   };
 
   // Initialize the BlockMatrix from 2D arrays
-  void Initialize(const std::vector<long> &matrix) {
+  void Initialize(const std::vector<double> &matrix) {
     for (int i = 0; i < nBlocksPerCol; i++)
       for (int j = 0; j < nBlocksPerRow; j++) {
-        long *CurrBlock = GetBlock(i, j);
+        double *CurrBlock = GetBlock(i, j);
         for (int ii = 0; ii < colsPerBlock; ++ii)
           for (int jj = 0; jj < rowsPerBlock; ++jj) {
             int curri = i * colsPerBlock + ii;
@@ -53,7 +53,7 @@ public:
     long fail = 0;
     for (int i = 0; i < nBlocksPerCol; i++)
       for (int j = 0; j < nBlocksPerRow; j++) {
-        long *CurrBlock = GetBlock(i, j);
+        double *CurrBlock = GetBlock(i, j);
         for (int ii = 0; ii < colsPerBlock; ++ii)
           for (int jj = 0; jj < rowsPerBlock; ++jj) {
             int curri = i * colsPerBlock + ii;
@@ -72,26 +72,11 @@ public:
     return fail;
   }
 
-  long *GetBlock(int i, int j) const {
+  double *GetBlock(int i, int j) const {
     assert(i < nBlocksPerCol && j < nBlocksPerRow && "Accessing outside block");
     return Blocks[i][j].get();
   }
 
-  // Print BlockMatrix
-  void Print() {
-    for (int i = 0; i < nBlocksPerCol; i++)
-      for (int j = 0; j < nBlocksPerRow; j++) {
-        long *CurrBlock = GetBlock(i, j);
-        printf("Block (%d, %d)\n", i, j);
-        for (int ii = 0; ii < colsPerBlock; ++ii) {
-          for (int jj = 0; jj < rowsPerBlock; ++jj) {
-            printf(" %5ld", CurrBlock[ii * colsPerBlock + jj]);
-          }
-          printf("\n");
-        }
-        printf("\n");
-      }
-  }
 };
 
 static size_t BS = 0;
@@ -109,10 +94,10 @@ void BlockMatMul_TargetNowait(BlockMatrix &A, BlockMatrix &B, BlockMatrix &C) {
   for (int i = 0; i < N / BS; ++i)
     
     for (int j = 0; j < N / BS; ++j) {
-      long *BlockC = C.GetBlock(i, j);
+      double *BlockC = C.GetBlock(i, j);
       for (int k = 0; k < N / BS; ++k) {
-        long *BlockA = A.GetBlock(k, j);
-        long *BlockB = B.GetBlock(i, k);
+        double *BlockA = A.GetBlock(k, j);
+        double *BlockB = B.GetBlock(i, k);
         #pragma omp target depend(in: BlockA[0], BlockB[0]) \
                            depend(inout: BlockC[0]) \
                            map(to: BlockA[:BS*BS], BlockB[:BS*BS]) \
@@ -128,7 +113,7 @@ void BlockMatMul_TargetNowait(BlockMatrix &A, BlockMatrix &B, BlockMatrix &C) {
           #pragma omp parallel for
           for (int ii = 0; ii < BS; ++ii)
             for (int jj = 0; jj < BS; ++jj) {
-              long sum = 0.0;
+              double sum = 0.0;
               for (int kk = 0; kk < BS; ++kk)
                 sum += BlockA[ii * BS + kk] * BlockB[kk * BS + jj];
               BlockC[ii * BS + jj] += sum;
@@ -138,21 +123,6 @@ void BlockMatMul_TargetNowait(BlockMatrix &A, BlockMatrix &B, BlockMatrix &C) {
         
       }
     }
-}
-
-void Matmul(const std::vector<long> &a, const std::vector<long> &b,
-            std::vector<long> &c) {
-#pragma omp parallel for
-  for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < N; ++j) {
-      long sum = 0.0;
-      for (int k = 0; k < N; ++k) {
-        sum += a[i * N + k] * b[k * N + j];
-        //Delay();
-      }
-      c[i * N + j] = sum;
-    }
-  }
 }
 
 // Output matrix to stdout
@@ -187,9 +157,9 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  std::vector<long> a(N * N);
-  std::vector<long> b(N * N);
-  std::vector<long> c(N * N, 0.0);
+  std::vector<double> a(N * N);
+  std::vector<double> b(N * N);
+  std::vector<double> c(N * N, 0.0);
 
   auto BlockedA = BlockMatrix(BS, BS, N, N);
   auto BlockedB = BlockMatrix(BS, BS, N, N);
@@ -209,20 +179,11 @@ int main(int argc, char *argv[]) {
 
   fprintf(stdout, "<< Matrix Multiplication >>\n");
 
-  //t = omp_get_wtime();
-  //Matmul(a, b, c);
-  //t = omp_get_wtime() - t;
-  //fprintf(stdout, "Local MatMul Computation done in %0.6lfs\n", t);
-
   t = omp_get_wtime();
   BlockMatMul_TargetNowait(BlockedA, BlockedB, BlockedC);
   t = omp_get_wtime() - t;
   fprintf(stdout, "Offloaded BlockMatMul Computation done in %0.6lfs\n", t);
 
-  // if (BlockedC.Compare(c) > 0) {
-  //   // exit code to error if there is any missmatch
-  //   return 1;
-  // }
 
   return 0;
 }
