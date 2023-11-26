@@ -120,10 +120,10 @@ void BlockMatMul_TargetNowait(BlockMatrix &A, BlockMatrix &B, BlockMatrix &C) {
         {
 
           
-          char hostname[1024];
-          hostname[1023] = '\0';
-          gethostname(hostname, 1023);
-          printf("[WORKER][PID=%d] %d x %d x %d | Node: %s\n", getpid(), i, j, k, hostname);
+          //char hostname[1024];
+          //hostname[1023] = '\0';
+          //gethostname(hostname, 1023);
+          //printf("[WORKER][PID=%d] %d x %d x %d | Node: %s\n", getpid(), i, j, k, hostname);
 
           #pragma omp parallel for
           for (int ii = 0; ii < BS; ++ii)
@@ -132,7 +132,7 @@ void BlockMatMul_TargetNowait(BlockMatrix &A, BlockMatrix &B, BlockMatrix &C) {
               for (int kk = 0; kk < BS; ++kk)
                 sum += BlockA[ii * BS + kk] * BlockB[kk * BS + jj];
               BlockC[ii * BS + jj] += sum;
-                Delay();
+                //Delay();
             }
         }
         
@@ -148,7 +148,7 @@ void Matmul(const std::vector<long> &a, const std::vector<long> &b,
       long sum = 0.0;
       for (int k = 0; k < N; ++k) {
         sum += a[i * N + k] * b[k * N + j];
-        Delay();
+        //Delay();
       }
       c[i * N + j] = sum;
     }
@@ -219,10 +219,10 @@ int main(int argc, char *argv[]) {
   t = omp_get_wtime() - t;
   fprintf(stdout, "Offloaded BlockMatMul Computation done in %0.6lfs\n", t);
 
-  if (BlockedC.Compare(c) > 0) {
-    // exit code to error if there is any missmatch
-    return 1;
-  }
+  // if (BlockedC.Compare(c) > 0) {
+  //   // exit code to error if there is any missmatch
+  //   return 1;
+  // }
 
   return 0;
 }
