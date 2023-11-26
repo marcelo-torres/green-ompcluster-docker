@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# docker run --name ompc-experiment -v $PWD:/volume -it ompc-mpi-base 
+
 algorithms=(
     #heft
     #moheft_energy
