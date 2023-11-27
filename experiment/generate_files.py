@@ -4,7 +4,7 @@ import shutil
 
 from datetime import datetime, timedelta
 
-DEFAULT_ROUND = 8
+DEFAULT_ROUND = 2
 
 def get_cluster_files(worker_c1_file, worker_c2_file, worker_c4_file):
     cluster_files = []
@@ -161,6 +161,9 @@ def get_green_energy_available(source_file, pv_area, init_timedelta):
                 print(init_dt_time)
 
             if dt < init_dt_time:
+                continue
+
+            if dt < init_dt_time + timedelta(hours=3):
                 continue
 
             solar_irradiance_in_W_m2 = float(row[2])
