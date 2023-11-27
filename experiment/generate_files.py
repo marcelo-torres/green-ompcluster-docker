@@ -279,9 +279,9 @@ if __name__ == '__main__':
     base_path = './../ompc_docker_cluster/get_metrics/tasks_durations/'
 
     for topology in topologies:
-        worker_c1_file = f'{base_path}/{topology}/worker_c1_1.csv'
-        worker_c2_file = f'{base_path}/{topology}/worker_c2_1.csv'
-        worker_c4_file = f'{base_path}/{topology}/worker_c4_1.csv'
+        worker_c1_file = f'{base_path}/{topology}/intel_i3.csv'
+        worker_c2_file = f'{base_path}/{topology}/intel_i5h.csv'
+        worker_c4_file = f'{base_path}/{topology}/amd_epyc_7453.csv'
 
         location = f'experiment_1/{topology}/'
         if os.path.exists(location):

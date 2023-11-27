@@ -22,10 +22,12 @@ def get_mean_durations_from_worker(iterations, worker_name):
     mean_durations_file=[]
 
     for it in iterations:
-        file_name = f'traces/{worker_name}/iter_{it}/{worker_name}-iter_{it}_mean_durations.csv'
-        mean_durations_file.append(
-            file_name
-        )
+        for i in range(10):
+            id=i+1
+            file_name = f'selected_traces/{worker_name}/iter_{it}/{id}/{worker_name}-iter_{it}-durations_{id}.csv'
+            mean_durations_file.append(
+                file_name
+            )
     
     return get_mean_durations_from_files(mean_durations_file)
 
@@ -97,8 +99,8 @@ if __name__ == '__main__':
     seed = 1700704603
     graph_type_sizes_file='./graph_type_sizes_20x10.csv'
 
-    iterations = [8589934592, 34359738368, 68719476736]
-    workers=['worker_c1_1', 'worker_c2_1', 'worker_c4_1']
+    iterations = [68719476736]
+    workers=['amd_epyc_7453', 'intel_i5h', 'intel_i3']
    
     graph_sizes = get_graph_sizes(graph_type_sizes_file)
     workers_tasks_durations_list = get_mean_durations_from_workers_list(iterations, workers)
