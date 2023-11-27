@@ -15,10 +15,15 @@ def get_ids_from_csv_file(file):
     return tasks_ids
 
 def are_task_ids_valid(tasks_ids):
+
+    if len(tasks_ids) == 1:
+        return True
+
     last_id = 0
     for actual_id in tasks_ids:
         valid = actual_id == last_id +1
         if not valid:
+            print(f'{actual_id} invalid')
             return False
         last_id = actual_id
 
@@ -30,7 +35,7 @@ if __name__ == '__main__':
     try:
         tasks_ids = get_ids_from_csv_file(file_to_check)
         valid = are_task_ids_valid(tasks_ids)
-    except:
+    except Exception as e:
         valid = False
     
     if valid:

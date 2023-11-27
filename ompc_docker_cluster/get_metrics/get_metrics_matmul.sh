@@ -63,7 +63,7 @@ do
             echo -e "$head_container_full_name\n$worker_container:1" >> $HOST_FILE
             
             # Run application
-            mpirun -np 2 --hostfile $HOST_FILE ./matmul 4 4
+            mpirun -np 2 --hostfile $HOST_FILE ./matmul 16 4
 
             # Merge output
             merged_trace_file="$trace_file_prefix"".json"
@@ -79,6 +79,7 @@ do
             tasks_durations_files+=($tasks_durations_file)
             python3 extract_tasks_durations.py "$relative_path_to_trace_exec""$merged_trace_file" $tasks_durations_file
             
+            python3 check_task_ids.py $tasks_durations_file
             must_execute=$(python3 check_task_ids.py $tasks_durations_file)
             if [ $must_execute -ne 0 ]
             then

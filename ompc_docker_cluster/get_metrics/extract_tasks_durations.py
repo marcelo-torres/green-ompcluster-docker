@@ -52,7 +52,8 @@ def tune_tasks_duration(tasks_duration):
     first_id = tasks_duration[0][0]
     first_id-=1
 
-    return[ (task_id-first_id, task_duration) for task_id, task_duration in tasks_duration]
+    #return[ (task_id-first_id, task_duration) for task_id, task_duration in tasks_duration]
+    return[ (index+1, data[1]) for index, data in enumerate(tasks_duration) ]
 
 def get_args():
     args = sys.argv[1:]
