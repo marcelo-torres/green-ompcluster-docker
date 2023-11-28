@@ -9,3 +9,19 @@ Makespan: 1664.418
 Makespan: 1496.450
 Makespan: 1806.646
 Makespan: 1575.312
+Objectives[0]: 1057.710 15595.0 Objectives[1]: 1446.230 14369.0 Objectives[2]: 1592.830 14288.0 Objectives[3]: 1595.910 12746.0 Objectives[4]: 1614.740 12716.0 Objectives[5]: 1795.820 12581.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1745.994 19270.0 Objectives[1]: 1797.782 19229.0 Objectives[2]: 2635.742 12581.0
+Objectives[0]: 1806.920 13069.0 Objectives[1]: 2433.800 8485.0 Objectives[2]: 2440.800 8393.0 Objectives[3]: 2570.100 8342.0 Objectives[4]: 2570.872 8256.0 Objectives[5]: 2577.872 8164.0
+Objectives[0]: 1313.760 16972.0 Objectives[1]: 1997.376 11478.0 Objectives[2]: 2019.900 11382.0 Objectives[3]: 2028.222 11337.0 Objectives[4]: 2040.906 11292.0 Objectives[5]: 2049.172 11226.0
+Objectives[0]: 1779.850 19586.0 Objectives[1]: 2215.790 12906.0 Objectives[2]: 2247.640 12900.0 Objectives[3]: 2247.912 12810.0 Objectives[4]: 2301.900 12708.0 Objectives[5]: 2327.350 12657.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1639.560 17804.0 Objectives[1]: 1930.340 13028.0 Objectives[2]: 1950.70 12617.0 Objectives[3]: 1978.660 12572.0 Objectives[4]: 2131.770 12554.0 Objectives[5]: 2249.226 12458.0
+Objectives[0]: 1757.882 19123.0 Objectives[1]: 1758.794 18796.0 Objectives[2]: 2765.460 12649.0 Objectives[3]: 2772.260 12463.0 Objectives[4]: 2814.230 12418.0 Objectives[5]: 2814.980 12230.0
+Objectives[0]: 1727.976 18063.0 Objectives[1]: 1734.576 18018.0 Objectives[2]: 1925.140 13555.0 Objectives[3]: 1941.536 13414.0 Objectives[4]: 2096.20 13269.0
+Objectives[0]: 1057.710 15595.0 Objectives[1]: 1446.230 14369.0 Objectives[2]: 1592.830 14288.0 Objectives[3]: 1595.910 12746.0 Objectives[4]: 1614.740 12716.0 Objectives[5]: 1795.820 12581.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1745.994 19270.0 Objectives[1]: 1797.782 19229.0 Objectives[2]: 2635.742 12581.0
+Objectives[0]: 1806.920 13069.0 Objectives[1]: 2433.800 8485.0 Objectives[2]: 2440.800 8393.0 Objectives[3]: 2570.100 8342.0 Objectives[4]: 2570.872 8256.0 Objectives[5]: 2577.872 8164.0
+Objectives[0]: 1313.760 16972.0 Objectives[1]: 1997.376 11478.0 Objectives[2]: 2019.900 11382.0 Objectives[3]: 2028.222 11337.0 Objectives[4]: 2040.906 11292.0 Objectives[5]: 2049.172 11226.0
+Objectives[0]: 1779.850 19586.0 Objectives[1]: 2215.790 12906.0 Objectives[2]: 2247.640 12900.0 Objectives[3]: 2247.912 12810.0 Objectives[4]: 2301.900 12708.0 Objectives[5]: 2327.350 12657.0

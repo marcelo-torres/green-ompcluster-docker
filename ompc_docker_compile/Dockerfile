@@ -39,3 +39,5 @@ RUN mkdir /ompc/
 ADD compile-llvm.ssh /ompc/
 ADD set-clang.ssh /ompc/
 
+ADD get_task_bench.sh /
+RUN . /get_task_bench.sh 
