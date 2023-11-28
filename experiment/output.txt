@@ -1,0 +1,11 @@
+Tue Nov 28 00:15:46 UTC 2023
+Makespan: 1128.720
+Makespan: 1664.418
+Makespan: 1726.448
+Makespan: 1753.870
+Makespan: 1220.536
+Makespan: 1709.152
+Makespan: 1664.418
+Makespan: 1496.450
+Makespan: 1806.646
+Makespan: 1575.312

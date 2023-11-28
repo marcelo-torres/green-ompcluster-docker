@@ -168,10 +168,17 @@ def get_green_energy_available(source_file, pv_area, init_timedelta):
 
             solar_irradiance_in_W_m2 = float(row[2])
             solar_irradiance = pv_area * solar_irradiance_in_W_m2
+
+            # Energy (J) = Potency (W) * Time (s)
+            total_green_power_during_one_minute = solar_irradiance * 60
+
             solar_irradiance = round(solar_irradiance, DEFAULT_ROUND)
-            solar_irradiance_list.append(  # TODO Multiply by 5
-                str(solar_irradiance)
-            )
+            for i in range (5):
+                # The source file logs solar irradiance in interval of 5 minutes, but the target file expects
+                # 1 minute intervals
+                solar_irradiance_list.append(
+                    str(total_green_power_during_one_minute)
+                 )
         
         return solar_irradiance_list
     
@@ -237,19 +244,9 @@ def generate_no_green_energy_available_file(lines, columns):
 
 if __name__ == '__main__':
 
-    # AMD EPYC 7453 
-    #   TDP: 225W
-    #   Cores: 28
-    #
-    # Pc = 225W / 28 = 8.03571428571W
-    #
-    #
-    # 1 x Pc ~  8.03571W
-    # 2 x Pc ~ 16.07143W
-    # 4 x Pc ~ 32.14286W
-    c1_power = 8.03571
-    c2_power = 16.07143
-    c4_power = 32.14286
+    c1_power = 15  # Intel Core i3-6006U -> 100% *  15W 
+    c2_power = 45  # Intel Core i5-10300H -> 100% * 45W
+    c4_power = 92.25 # AMD EPYC 7453 -> 41% * 225W = 92.25W
 
     power_usages = get_cluster_energy_usage(c1_power, c2_power, c4_power)
     generate_task_energy_consumption_file(power_usages)
@@ -296,11 +293,6 @@ if __name__ == '__main__':
         cluster_files = get_cluster_files(worker_c1_file, worker_c2_file, worker_c4_file)
         generate_task_graph_file(cluster_files, location, graph=1)
         generate_task_graph_file(cluster_files, location, graph=2)
-    exit
-
-    #worker_c1_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c1_1/worker_c1_1_mean_durations.csv'
-    #worker_c2_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c2_1/worker_c2_1_mean_durations.csv'
-    #worker_c4_file = './../ompc_docker_cluster/get_metrics/application/traces/worker_c4_1/worker_c4_1_mean_durations.csv'
 
     dc01_file = './../photovolta/data/splitted/selected/m282-29_photovolta_2016_part_1_17.csv'
     dc02_file = './../photovolta/data/splitted/selected/m166-13_photovolta_2016_part_1_7.csv'
@@ -313,6 +305,7 @@ if __name__ == '__main__':
     dc04_time = 18
 
     for i in range(4):
+        # It simulates the cycle day
         dc01_time += 6 * i
         dc02_time += 6 * i
         dc03_time += 6 * i

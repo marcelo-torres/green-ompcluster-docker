@@ -2,6 +2,8 @@
 
 # docker run --name ompc-experiment -v $PWD:/volume -it ompc-mpi-base 
 
+output_file='output.txt'
+
 algorithms=(
     heft
     moheft_energy
@@ -31,6 +33,8 @@ topologies=(
     random_nearest
 )
 
+echo $(date) > $output_file
+
 for e in "${!experiments[@]}"
 do
     experiment="${experiments[$e]}"
@@ -55,7 +59,8 @@ do
             export OMPCLUSTER_SCHEDULER_INPUT_DIRECTORY=$experiment_path
 
 
-            mpirun -np 24 /task-bench/ompcluster/main -steps 20 -width 10 -type $topology -kernel compute_bound -iter 1 | grep -E 'Objectives|Makespan'
+            output=$(mpirun -np 24 /task-bench/ompcluster/main -steps 20 -width 10 -type $topology -kernel compute_bound -iter 1 | grep -E 'Objectives|Makespan')
+            echo $output >> $output_file
             echo
         done
     done
