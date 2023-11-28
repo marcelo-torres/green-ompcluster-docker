@@ -25,3 +25,64 @@ Objectives[0]: 1745.994 19270.0 Objectives[1]: 1797.782 19229.0 Objectives[2]: 2
 Objectives[0]: 1806.920 13069.0 Objectives[1]: 2433.800 8485.0 Objectives[2]: 2440.800 8393.0 Objectives[3]: 2570.100 8342.0 Objectives[4]: 2570.872 8256.0 Objectives[5]: 2577.872 8164.0
 Objectives[0]: 1313.760 16972.0 Objectives[1]: 1997.376 11478.0 Objectives[2]: 2019.900 11382.0 Objectives[3]: 2028.222 11337.0 Objectives[4]: 2040.906 11292.0 Objectives[5]: 2049.172 11226.0
 Objectives[0]: 1779.850 19586.0 Objectives[1]: 2215.790 12906.0 Objectives[2]: 2247.640 12900.0 Objectives[3]: 2247.912 12810.0 Objectives[4]: 2301.900 12708.0 Objectives[5]: 2327.350 12657.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1639.560 17804.0 Objectives[1]: 1930.340 13028.0 Objectives[2]: 1950.70 12617.0 Objectives[3]: 1978.660 12572.0 Objectives[4]: 2131.770 12554.0 Objectives[5]: 2249.226 12458.0
+Objectives[0]: 1757.882 19123.0 Objectives[1]: 1758.794 18796.0 Objectives[2]: 2765.460 12649.0 Objectives[3]: 2772.260 12463.0 Objectives[4]: 2814.230 12418.0 Objectives[5]: 2814.980 12230.0
+Objectives[0]: 1727.976 18063.0 Objectives[1]: 1734.576 18018.0 Objectives[2]: 1925.140 13555.0 Objectives[3]: 1941.536 13414.0 Objectives[4]: 2096.20 13269.0
+Makespan: 1128.720
+Makespan: 1664.418
+Makespan: 1725.30
+Makespan: 1753.870
+Makespan: 1220.536
+Makespan: 1709.152
+Makespan: 1664.418
+Makespan: 1496.450
+Makespan: 1806.646
+Makespan: 1575.312
+Objectives[0]: 1057.710 15595.0 Objectives[1]: 1446.230 14369.0 Objectives[2]: 1592.830 14288.0 Objectives[3]: 1595.910 12746.0 Objectives[4]: 1614.740 12716.0 Objectives[5]: 1795.820 12581.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1745.994 19270.0 Objectives[1]: 1797.782 19229.0 Objectives[2]: 2635.742 12581.0
+Objectives[0]: 1806.920 13069.0 Objectives[1]: 2433.800 8485.0 Objectives[2]: 2440.800 8393.0 Objectives[3]: 2570.100 8342.0 Objectives[4]: 2570.872 8256.0 Objectives[5]: 2577.872 8164.0
+Objectives[0]: 1313.760 16972.0 Objectives[1]: 1997.376 11478.0 Objectives[2]: 2019.900 11382.0 Objectives[3]: 2028.222 11337.0 Objectives[4]: 2040.906 11292.0 Objectives[5]: 2049.172 11226.0
+Objectives[0]: 1779.850 19586.0 Objectives[1]: 2215.790 12906.0 Objectives[2]: 2247.640 12900.0 Objectives[3]: 2247.912 12810.0 Objectives[4]: 2301.900 12708.0 Objectives[5]: 2327.350 12657.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1639.560 17804.0 Objectives[1]: 1930.340 13028.0 Objectives[2]: 1950.70 12617.0 Objectives[3]: 1978.660 12572.0 Objectives[4]: 2131.770 12554.0 Objectives[5]: 2249.226 12458.0
+Objectives[0]: 1757.882 19123.0 Objectives[1]: 1758.794 18796.0 Objectives[2]: 2765.460 12649.0 Objectives[3]: 2772.260 12463.0 Objectives[4]: 2814.230 12418.0 Objectives[5]: 2814.980 12230.0
+Objectives[0]: 1727.976 18063.0 Objectives[1]: 1734.576 18018.0 Objectives[2]: 1925.140 13555.0 Objectives[3]: 1941.536 13414.0 Objectives[4]: 2096.20 13269.0
+Objectives[0]: 1058.230 15657.0 Objectives[1]: 5057.400 90.0 Objectives[2]: 5147.340 75.0 Objectives[3]: 5468.250 30.0 Objectives[4]: 5577.550 15.0 Objectives[5]: 5625.990 0.0
+Objectives[0]: 1753.780 11961.0 Objectives[1]: 2962.630 540.0 Objectives[2]: 3002.202 360.0 Objectives[3]: 3094.240 180.0 Objectives[4]: 3130.378 60.0 Objectives[5]: 3275.850 0.0
+Objectives[0]: 1732.604 12298.0 Objectives[1]: 2927.920 630.0 Objectives[2]: 2949.182 405.0 Objectives[3]: 3015.730 225.0 Objectives[4]: 3076.882 135.0 Objectives[5]: 3245.692 0.0
+Objectives[0]: 1808.700 7446.0 Objectives[1]: 2759.760 456.0 Objectives[2]: 2842.220 276.0 Objectives[3]: 2868.900 270.0 Objectives[4]: 2882.340 180.0 Objectives[5]: 2957.800 0.0
+Objectives[0]: 1406.620 7166.0 Objectives[1]: 2445.42 300.0 Objectives[2]: 2502.56 225.0 Objectives[3]: 2677.950 210.0 Objectives[4]: 2693.870 135.0 Objectives[5]: 2719.220 60.0
+Objectives[0]: 1767.24 15964.0 Objectives[1]: 2992.70 681.0 Objectives[2]: 3057.590 495.0 Objectives[3]: 3060.900 225.0 Objectives[4]: 3082.510 45.0 Objectives[5]: 3169.50 0.0
+Objectives[0]: 1753.780 11961.0 Objectives[1]: 2962.630 540.0 Objectives[2]: 3002.202 360.0 Objectives[3]: 3094.240 180.0 Objectives[4]: 3130.378 60.0 Objectives[5]: 3275.850 0.0
+Objectives[0]: 1581.140 15193.0 Objectives[1]: 2894.760 675.0 Objectives[2]: 2964.650 495.0 Objectives[3]: 3034.580 315.0 Objectives[4]: 3046.860 135.0 Objectives[5]: 3055.490 0.0
+Objectives[0]: 1814.20 10511.0 Objectives[1]: 2978.180 360.0 Objectives[2]: 3025.620 315.0 Objectives[3]: 3034.252 270.0 Objectives[4]: 3119.190 135.0 Objectives[5]: 3187.664 45.0
+Objectives[0]: 1576.926 16299.0 Objectives[1]: 2831.330 450.0 Objectives[2]: 2850.972 405.0 Objectives[3]: 2864.462 225.0 Objectives[4]: 3043.532 184.0 Objectives[5]: 3047.310 0.0
+Makespan: 1128.720
+Makespan: 1664.418
+Makespan: 1726.448
+Makespan: 1753.870
+Makespan: 1220.536
+Makespan: 1709.152
+Makespan: 1664.418
+Makespan: 1496.450
+Makespan: 1806.646
+Makespan: 1575.312
+Objectives[0]: 1057.710 15595.0 Objectives[1]: 1446.230 14369.0 Objectives[2]: 1592.830 14288.0 Objectives[3]: 1595.910 12746.0 Objectives[4]: 1614.740 12716.0 Objectives[5]: 1795.820 12581.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1745.994 19270.0 Objectives[1]: 1797.782 19229.0 Objectives[2]: 2635.742 12581.0
+Objectives[0]: 1806.920 13069.0 Objectives[1]: 2433.800 8485.0 Objectives[2]: 2440.800 8393.0 Objectives[3]: 2570.100 8342.0 Objectives[4]: 2570.872 8256.0 Objectives[5]: 2577.872 8164.0
+Objectives[0]: 1313.760 16972.0 Objectives[1]: 1997.376 11478.0 Objectives[2]: 2019.900 11382.0 Objectives[3]: 2028.222 11337.0 Objectives[4]: 2040.906 11292.0 Objectives[5]: 2049.172 11226.0
+Objectives[0]: 1779.850 19586.0 Objectives[1]: 2215.790 12906.0 Objectives[2]: 2247.640 12900.0 Objectives[3]: 2247.912 12810.0 Objectives[4]: 2301.900 12708.0 Objectives[5]: 2327.350 12657.0
+Objectives[0]: 1839.534 15564.0 Objectives[1]: 1853.270 15318.0
+Objectives[0]: 1639.560 17804.0 Objectives[1]: 1930.340 13028.0 Objectives[2]: 1950.70 12617.0 Objectives[3]: 1978.660 12572.0 Objectives[4]: 2131.770 12554.0 Objectives[5]: 2249.226 12458.0
+Objectives[0]: 1757.882 19123.0 Objectives[1]: 1758.794 18796.0 Objectives[2]: 2765.460 12649.0 Objectives[3]: 2772.260 12463.0 Objectives[4]: 2814.230 12418.0 Objectives[5]: 2814.980 12230.0
+Objectives[0]: 1727.976 18063.0 Objectives[1]: 1734.576 18018.0 Objectives[2]: 1925.140 13555.0 Objectives[3]: 1941.536 13414.0 Objectives[4]: 2096.20 13269.0
+Objectives[0]: 1058.230 11994.0 Objectives[1]: 1934.150 555.0 Objectives[2]: 2102.170 375.0 Objectives[3]: 2122.190 195.0 Objectives[4]: 2215.960 60.0 Objectives[5]: 2223.910 0.0
+Objectives[0]: 1732.340 10542.0 Objectives[1]: 3311.220 540.0 Objectives[2]: 3354.750 360.0 Objectives[3]: 3374.252 225.0 Objectives[4]: 3470.62 135.0 Objectives[5]: 3596.970 0.0
+Objectives[0]: 1720.90 14477.0 Objectives[1]: 3313.822 540.0 Objectives[2]: 3321.640 405.0 Objectives[3]: 3343.260 360.0 Objectives[4]: 3360.472 180.0 Objectives[5]: 3389.536 0.0
+Objectives[0]: 1892.450 8916.0 Objectives[1]: 2623.620 552.0 Objectives[2]: 2646.200 396.0 Objectives[3]: 2746.200 276.0 Objectives[4]: 2784.20 120.0 Objectives[5]: 2884.20 0.0
+Objectives[0]: 1475.242 7860.0 Objectives[1]: 2126.0 604.0 Objectives[2]: 2212.240 420.0 Objectives[3]: 2232.670 240.0 Objectives[4]: 2244.920 105.0 Objectives[5]: 2306.932 0.0
+Objectives[0]: 1765.252 16031.0 Objectives[1]: 3326.660 542.0 Objectives[2]: 3330.294 317.0 Objectives[3]: 3393.772 225.0 Objectives[4]: 3395.520 92.0 Objectives[5]: 3441.592 0.0
+Objectives[0]: 1732.340 10542.0 Objectives[1]: 3311.220 540.0 Objectives[2]: 3354.750 360.0 Objectives[3]: 3374.252 225.0 Objectives[4]: 3470.62 135.0 Objectives[5]: 3596.970 0.0
