@@ -1,7 +1,7 @@
 #!/bin/bash
 
-steps=20
-with=10
+steps=64
+with=16
 basic_types=(
     trivial
     stencil_1d

@@ -163,7 +163,7 @@ def get_green_energy_available(source_file, pv_area, init_timedelta):
             if dt < init_dt_time:
                 continue
 
-            if dt < init_dt_time + timedelta(hours=3):
+            if dt < init_dt_time + timedelta(hours=24):
                 continue
 
             solar_irradiance_in_W_m2 = float(row[2])
@@ -244,9 +244,9 @@ def generate_no_green_energy_available_file(lines, columns):
 
 if __name__ == '__main__':
 
-    c1_power = 15  # Intel Core i3-6006U -> 100% *  15W 
-    c2_power = 45  # Intel Core i5-10300H -> 100% * 45W
-    c4_power = 92.25 # AMD EPYC 7453 -> 41% * 225W = 92.25W
+    c1_power = 15 * 60 # Intel Core i3-6006U -> 100% *  15W 
+    c2_power = 45 * 60  # Intel Core i5-10300H -> 100% * 45W
+    c4_power = 92.25 * 60  # AMD EPYC 7453 -> 41% * 225W = 92.25W
 
     power_usages = get_cluster_energy_usage(c1_power, c2_power, c4_power)
     generate_task_energy_consumption_file(power_usages)
