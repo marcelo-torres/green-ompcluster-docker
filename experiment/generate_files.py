@@ -244,9 +244,9 @@ def generate_no_green_energy_available_file(lines, columns):
 
 if __name__ == '__main__':
 
-    c1_power = 15 * 60 # Intel Core i3-6006U -> 100% *  15W 
+    c1_power = 15 * 60 # Intel Core i3-6006U -> 100% *  15W
     c2_power = 45 * 60  # Intel Core i5-10300H -> 100% * 45W
-    c4_power = 92.25 * 60  # AMD EPYC 7453 -> 41% * 225W = 92.25W
+    c4_power = 184.5 * 60  # AMD EPYC 7453 -> 41% * 2 * 225W = 184.5W
 
     power_usages = get_cluster_energy_usage(c1_power, c2_power, c4_power)
     generate_task_energy_consumption_file(power_usages)

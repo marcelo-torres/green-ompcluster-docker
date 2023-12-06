@@ -1,0 +1,496 @@
+Tue Nov 28 04:22:18 UTC 2023
+
+==== experiment_1 ====
+
+heft
+
+trivial
+Makespan: 10574.20
+
+stencil_1d
+Makespan: 11633.612
+
+stencil_1d_periodic
+Makespan: 11774.930
+
+dom
+Makespan: 3566.282
+
+tree
+Makespan: 10770.720
+
+fft
+Makespan: 11637.924
+
+nearest
+Makespan: 11633.612
+
+no_comm
+Makespan: 11627.770
+
+spread -period 2
+Makespan: 11707.946
+
+random_nearest
+Makespan: 11361.626
+
+moheft_energy
+
+trivial
+Objectives[0]: 10569.930 15136950.70 Objectives[1]: 12409.770 11830678.90 Objectives[2]: 12414.880 11824494.50 Objectives[3]: 12971.720 11639621.70 Objectives[4]: 12989.290 11633630.30 Objectives[5]: 13015.150 11627365.90
+
+stencil_1d
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+stencil_1d_periodic
+Objectives[0]: 11655.650 21478125.48 Objectives[1]: 17752.880 10269665.56 Objectives[2]: 17762.180 10259291.6 Objectives[3]: 17795.480 10253784.76 Objectives[4]: 17859.20 10250573.36 Objectives[5]: 17859.640 10245067.6
+
+dom
+Objectives[0]: 3608.174 3661071.86 Objectives[1]: 6498.184 1731021.66 Objectives[2]: 6498.456 1712361.60 Objectives[3]: 6621.36 1706773.30 Objectives[4]: 6745.344 1701212.50 Objectives[5]: 6869.904 1695669.40
+
+tree
+Objectives[0]: 11598.770 21724362.68 Objectives[1]: 15176.924 10569622.14 Objectives[2]: 15178.840 10560330.14 Objectives[3]: 15279.502 10546666.72 Objectives[4]: 15333.886 10530765.54 Objectives[5]: 15357.994 10518965.44
+
+fft
+Objectives[0]: 11634.214 20176898.32 Objectives[1]: 16471.704 10662282.80 Objectives[2]: 16578.244 10652946.80 Objectives[3]: 16605.262 10647328.40
+
+nearest
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+no_comm
+Objectives[0]: 11709.140 22164731.20 Objectives[1]: 16358.50 10522480.26 Objectives[2]: 16364.770 10522189.26 Objectives[3]: 16373.230 10522161.26 Objectives[4]: 16610.760 10496098.46 Objectives[5]: 16799.280 10495906.46
+
+spread -period 2
+Objectives[0]: 11788.330 20883138.64 Objectives[1]: 11798.532 20806748.34 Objectives[2]: 17412.430 10632916.68 Objectives[3]: 17432.164 10616823.68
+
+random_nearest
+Objectives[0]: 11635.840 22370989.26 Objectives[1]: 18915.964 10097567.22 Objectives[2]: 19140.574 10060763.12 Objectives[3]: 19181.474 10006963.42 Objectives[4]: 19237.534 10004768.2 Objectives[5]: 19250.156 10002272.62
+
+moheft_green_energy
+
+trivial
+Objectives[0]: 10569.930 15136950.70 Objectives[1]: 12409.770 11830678.90 Objectives[2]: 12414.880 11824494.50 Objectives[3]: 12971.720 11639621.70 Objectives[4]: 12989.290 11633630.30 Objectives[5]: 13015.150 11627365.90
+
+stencil_1d
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+stencil_1d_periodic
+Objectives[0]: 11660.712 21450459.52 Objectives[1]: 17272.434 10539571.14 Objectives[2]: 17394.832 10525091.84 Objectives[3]: 17394.840 10522631.64 Objectives[4]: 17439.90 10511376.84 Objectives[5]: 17688.400 10511211.84
+
+dom
+Objectives[0]: 3608.174 3661071.86 Objectives[1]: 6498.184 1731021.66 Objectives[2]: 6498.456 1712361.60 Objectives[3]: 6621.36 1706773.30 Objectives[4]: 6745.344 1701212.50 Objectives[5]: 6869.904 1695669.40
+
+tree
+Objectives[0]: 11598.770 21724362.68 Objectives[1]: 15176.924 10569622.14 Objectives[2]: 15178.840 10560330.14 Objectives[3]: 15279.502 10546666.72 Objectives[4]: 15333.886 10530765.54 Objectives[5]: 15357.994 10518965.44
+
+fft
+Objectives[0]: 11634.214 20176898.32 Objectives[1]: 16471.704 10662282.80 Objectives[2]: 16578.244 10652946.80 Objectives[3]: 16605.262 10647328.40
+
+nearest
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+no_comm
+Objectives[0]: 11709.140 22164731.20 Objectives[1]: 16358.50 10522480.26 Objectives[2]: 16364.770 10522189.26 Objectives[3]: 16373.230 10522161.26 Objectives[4]: 16610.760 10496098.46 Objectives[5]: 16799.280 10495906.46
+
+spread -period 2
+Objectives[0]: 11788.330 20883138.64 Objectives[1]: 11798.532 20806748.34 Objectives[2]: 17412.430 10632916.68 Objectives[3]: 17432.164 10616823.68
+
+random_nearest
+Objectives[0]: 11635.840 22370989.26 Objectives[1]: 18915.964 10097567.22 Objectives[2]: 19140.574 10060763.12 Objectives[3]: 19181.474 10006963.42 Objectives[4]: 19237.534 10004768.2 Objectives[5]: 19250.156 10002272.62
+
+
+==== experiment_2_1 ====
+
+heft
+
+trivial
+Makespan: 10574.20
+
+stencil_1d
+Makespan: 11633.612
+
+stencil_1d_periodic
+Makespan: 11774.930
+
+dom
+Makespan: 3566.282
+
+tree
+Makespan: 10770.720
+
+fft
+Makespan: 11573.714
+
+nearest
+Makespan: 11633.612
+
+no_comm
+Makespan: 11627.770
+
+spread -period 2
+Makespan: 11707.946
+
+random_nearest
+Makespan: 11361.626
+
+moheft_energy
+
+trivial
+Objectives[0]: 10569.930 15136950.70 Objectives[1]: 12409.770 11830678.90 Objectives[2]: 12414.880 11824494.50 Objectives[3]: 12971.720 11639621.70 Objectives[4]: 12989.290 11633630.30 Objectives[5]: 13015.150 11627365.90
+
+stencil_1d
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+stencil_1d_periodic
+Objectives[0]: 11655.650 21478125.48 Objectives[1]: 17752.880 10269665.56 Objectives[2]: 17762.180 10259291.6 Objectives[3]: 17795.480 10253784.76 Objectives[4]: 17859.20 10250573.36 Objectives[5]: 17859.640 10245067.6
+
+dom
+Objectives[0]: 3608.174 3661071.86 Objectives[1]: 6498.184 1731021.66 Objectives[2]: 6498.456 1712361.60 Objectives[3]: 6621.36 1706773.30 Objectives[4]: 6745.344 1701212.50 Objectives[5]: 6869.904 1695669.40
+
+tree
+Objectives[0]: 11598.770 21724362.68 Objectives[1]: 15176.924 10569622.14 Objectives[2]: 15178.840 10560330.14 Objectives[3]: 15279.502 10546666.72 Objectives[4]: 15333.886 10530765.54 Objectives[5]: 15357.994 10518965.44
+
+fft
+Objectives[0]: 11634.214 20176898.32 Objectives[1]: 16471.704 10662282.80 Objectives[2]: 16578.244 10652946.80 Objectives[3]: 16605.262 10647328.40
+
+nearest
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+no_comm
+Objectives[0]: 11709.140 22164731.20 Objectives[1]: 16358.50 10522480.26 Objectives[2]: 16364.770 10522189.26 Objectives[3]: 16373.230 10522161.26 Objectives[4]: 16610.760 10496098.46 Objectives[5]: 16799.280 10495906.46
+
+spread -period 2
+Objectives[0]: 11788.330 20883138.64 Objectives[1]: 11798.532 20806748.34 Objectives[2]: 17412.430 10632916.68 Objectives[3]: 17432.164 10616823.68
+
+random_nearest
+Objectives[0]: 11635.840 22370989.26 Objectives[1]: 18915.964 10097567.22 Objectives[2]: 19140.574 10060763.12 Objectives[3]: 19181.474 10006963.42 Objectives[4]: 19237.534 10004768.2 Objectives[5]: 19250.156 10002272.62
+
+moheft_green_energy
+
+trivial
+Objectives[0]: 10574.20 15361256.30 Objectives[1]: 14196.40 14446325.40 Objectives[2]: 51508.730 1513678.80 Objectives[3]: 51798.490 1505822.50 Objectives[4]: 52088.250 1502877.80 Objectives[5]: 52378.10 1498741.50
+
+stencil_1d
+Objectives[0]: 11766.752 14836660.4 Objectives[1]: 33846.84 58861.90 Objectives[2]: 33847.904 49315.20 Objectives[3]: 33860.722 39768.50 Objectives[4]: 33976.462 35791.28 Objectives[5]: 34084.494 35726.24
+
+stencil_1d_periodic
+Objectives[0]: 11645.870 15778778.74 Objectives[1]: 33792.0 15514.84 Objectives[2]: 33827.170 14734.24 Objectives[3]: 33964.362 14687.64 Objectives[4]: 34069.514 14045.44 Objectives[5]: 34143.940 13998.84
+
+dom
+Objectives[0]: 3577.502 2644751.48 Objectives[1]: 10379.492 21323.40 Objectives[2]: 10432.76 21299.10 Objectives[3]: 10515.596 1514.68 Objectives[4]: 10584.892 0.0
+
+tree
+Objectives[0]: 11598.100 14841361.68 Objectives[1]: 40621.356 8389.16 Objectives[2]: 40742.476 8218.16 Objectives[3]: 40827.556 7807.16 Objectives[4]: 40872.458 7396.16 Objectives[5]: 43845.906 7170.88
+
+fft
+Objectives[0]: 11641.930 16256013.60 Objectives[1]: 33692.684 31614.54 Objectives[2]: 33758.564 30622.42 Objectives[3]: 33839.540 22411.72 Objectives[4]: 33899.70 21889.62 Objectives[5]: 33917.780 20998.90
+
+nearest
+Objectives[0]: 11766.752 14836660.4 Objectives[1]: 33846.84 58861.90 Objectives[2]: 33847.904 49315.20 Objectives[3]: 33860.722 39768.50 Objectives[4]: 33976.462 35791.28 Objectives[5]: 34084.494 35726.24
+
+no_comm
+Objectives[0]: 11717.460 17111241.0 Objectives[1]: 34020.396 58299.32 Objectives[2]: 34028.780 48752.62 Objectives[3]: 34033.890 48255.92 Objectives[4]: 34173.370 40612.52 Objectives[5]: 34192.130 31065.82
+
+spread -period 2
+Objectives[0]: 11777.780 16412007.72 Objectives[1]: 33846.602 102134.82 Objectives[2]: 33874.204 86575.2 Objectives[3]: 33881.4 84859.30 Objectives[4]: 33963.942 65230.8 Objectives[5]: 34056.426 50093.10
+
+random_nearest
+Objectives[0]: 11642.270 15118499.76 Objectives[1]: 33485.322 29647.50 Objectives[2]: 33494.280 20100.80 Objectives[3]: 33658.522 13411.8 Objectives[4]: 33715.892 12466.16 Objectives[5]: 33785.140 10299.52
+
+
+==== experiment_2_2 ====
+
+heft
+
+trivial
+Makespan: 10574.20
+
+stencil_1d
+Makespan: 11633.612
+
+stencil_1d_periodic
+Makespan: 11774.930
+
+dom
+Makespan: 3566.282
+
+tree
+Makespan: 10770.720
+
+fft
+Makespan: 11637.924
+
+nearest
+Makespan: 11633.612
+
+no_comm
+Makespan: 11627.770
+
+spread -period 2
+Makespan: 11707.946
+
+random_nearest
+Makespan: 11361.626
+
+moheft_energy
+
+trivial
+Objectives[0]: 10569.930 15136950.70 Objectives[1]: 12409.770 11830678.90 Objectives[2]: 12414.880 11824494.50 Objectives[3]: 12971.720 11639621.70 Objectives[4]: 12989.290 11633630.30 Objectives[5]: 13015.150 11627365.90
+
+stencil_1d
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+stencil_1d_periodic
+Objectives[0]: 11655.650 21478125.48 Objectives[1]: 17752.880 10269665.56 Objectives[2]: 17762.180 10259291.6 Objectives[3]: 17795.480 10253784.76 Objectives[4]: 17859.20 10250573.36 Objectives[5]: 17859.640 10245067.6
+
+dom
+Objectives[0]: 3608.174 3661071.86 Objectives[1]: 6498.184 1731021.66 Objectives[2]: 6498.456 1712361.60 Objectives[3]: 6621.36 1706773.30 Objectives[4]: 6745.344 1701212.50 Objectives[5]: 6869.904 1695669.40
+
+tree
+Objectives[0]: 11598.770 21724362.68 Objectives[1]: 15176.924 10569622.14 Objectives[2]: 15178.840 10560330.14 Objectives[3]: 15279.502 10546666.72 Objectives[4]: 15333.886 10530765.54 Objectives[5]: 15357.994 10518965.44
+
+fft
+Objectives[0]: 11634.214 20176898.32 Objectives[1]: 16471.704 10662282.80 Objectives[2]: 16578.244 10652946.80 Objectives[3]: 16605.262 10647328.40
+
+nearest
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+no_comm
+Objectives[0]: 11709.140 22164731.20 Objectives[1]: 16358.50 10522480.26 Objectives[2]: 16364.770 10522189.26 Objectives[3]: 16373.230 10522161.26 Objectives[4]: 16610.760 10496098.46 Objectives[5]: 16799.280 10495906.46
+
+spread -period 2
+Objectives[0]: 11788.330 20883138.64 Objectives[1]: 11798.532 20806748.34 Objectives[2]: 17412.430 10632916.68 Objectives[3]: 17432.164 10616823.68
+
+random_nearest
+Objectives[0]: 11635.840 22370989.26 Objectives[1]: 18915.964 10097567.22 Objectives[2]: 19140.574 10060763.12 Objectives[3]: 19181.474 10006963.42 Objectives[4]: 19237.534 10004768.2 Objectives[5]: 19250.156 10002272.62
+
+moheft_green_energy
+
+trivial
+Objectives[0]: 10574.20 13807635.0 Objectives[1]: 11093.280 13498704.80 Objectives[2]: 11128.180 13484240.40 Objectives[3]: 11160.690 13469470.0 Objectives[4]: 11673.70 13467994.0 Objectives[5]: 49158.930 745549.90
+
+stencil_1d
+Objectives[0]: 11647.302 14796411.2 Objectives[1]: 29419.672 11737.18 Objectives[2]: 29430.158 11464.18 Objectives[3]: 29591.488 11311.18 Objectives[4]: 29658.290 11005.18 Objectives[5]: 29826.36 10852.18
+
+stencil_1d_periodic
+Objectives[0]: 11642.160 15602104.70 Objectives[1]: 30433.326 220326.66 Objectives[2]: 30462.830 220053.66 Objectives[3]: 30463.126 219900.66 Objectives[4]: 30691.718 219747.66 Objectives[5]: 30882.956 219594.66
+
+dom
+Objectives[0]: 3710.910 2233739.58 Objectives[1]: 6003.732 35989.32 Objectives[2]: 6031.484 20825.82 Objectives[3]: 6126.312 17979.66 Objectives[4]: 6149.44 6430.56 Objectives[5]: 6251.144 0.0
+
+tree
+Objectives[0]: 11593.160 14694623.2 Objectives[1]: 34960.736 158561.0 Objectives[2]: 35339.346 158336.42 Objectives[3]: 36406.966 158216.42 Objectives[4]: 36578.278 158123.42 Objectives[5]: 37725.126 158003.42
+
+fft
+Objectives[0]: 11611.724 14969298.20 Objectives[1]: 29142.222 49458.78 Objectives[2]: 29520.324 48087.90 Objectives[3]: 29650.574 47814.90 Objectives[4]: 29673.58 47661.90 Objectives[5]: 30018.32 45546.54
+
+nearest
+Objectives[0]: 11647.302 14796411.2 Objectives[1]: 29419.672 11737.18 Objectives[2]: 29430.158 11464.18 Objectives[3]: 29591.488 11311.18 Objectives[4]: 29658.290 11005.18 Objectives[5]: 29826.36 10852.18
+
+no_comm
+Objectives[0]: 11665.30 16614127.28 Objectives[1]: 27865.786 54385.76 Objectives[2]: 27927.600 35487.44 Objectives[3]: 27975.206 28571.98 Objectives[4]: 28103.250 4806.84 Objectives[5]: 28104.902 4113.84
+
+spread -period 2
+Objectives[0]: 11785.940 15157909.22 Objectives[1]: 28384.994 4099.40 Objectives[2]: 28573.582 3406.40 Objectives[3]: 28595.474 3013.40 Objectives[4]: 28630.772 2320.40 Objectives[5]: 28693.872 1234.40
+
+random_nearest
+Objectives[0]: 11577.950 15324644.74 Objectives[1]: 28178.672 11313.54 Objectives[2]: 28289.790 9306.82 Objectives[3]: 28377.154 7403.32 Objectives[4]: 28585.474 7043.32 Objectives[5]: 28631.352 5705.0
+
+
+==== experiment_2_3 ====
+
+heft
+
+trivial
+Makespan: 10574.20
+
+stencil_1d
+Makespan: 11633.612
+
+stencil_1d_periodic
+Makespan: 11774.930
+
+dom
+Makespan: 3566.282
+
+tree
+Makespan: 10770.720
+
+fft
+Makespan: 11637.924
+
+nearest
+Makespan: 11633.612
+
+no_comm
+Makespan: 11627.770
+
+spread -period 2
+Makespan: 11707.946
+
+random_nearest
+Makespan: 11361.626
+
+moheft_energy
+
+trivial
+Objectives[0]: 10569.930 15136950.70 Objectives[1]: 12409.770 11830678.90 Objectives[2]: 12414.880 11824494.50 Objectives[3]: 12971.720 11639621.70 Objectives[4]: 12989.290 11633630.30 Objectives[5]: 13015.150 11627365.90
+
+stencil_1d
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+stencil_1d_periodic
+Objectives[0]: 11655.650 21478125.48 Objectives[1]: 17752.880 10269665.56 Objectives[2]: 17762.180 10259291.6 Objectives[3]: 17795.480 10253784.76 Objectives[4]: 17859.20 10250573.36 Objectives[5]: 17859.640 10245067.6
+
+dom
+Objectives[0]: 3608.174 3661071.86 Objectives[1]: 6498.184 1731021.66 Objectives[2]: 6498.456 1712361.60 Objectives[3]: 6621.36 1706773.30 Objectives[4]: 6745.344 1701212.50 Objectives[5]: 6869.904 1695669.40
+
+tree
+Objectives[0]: 11598.770 21724362.68 Objectives[1]: 15176.924 10569622.14 Objectives[2]: 15178.840 10560330.14 Objectives[3]: 15279.502 10546666.72 Objectives[4]: 15333.886 10530765.54 Objectives[5]: 15357.994 10518965.44
+
+fft
+Objectives[0]: 11634.214 20176898.32 Objectives[1]: 16471.704 10662282.80 Objectives[2]: 16578.244 10652946.80 Objectives[3]: 16605.262 10647328.40
+
+nearest
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+no_comm
+Objectives[0]: 11709.140 22164731.20 Objectives[1]: 16358.50 10522480.26 Objectives[2]: 16364.770 10522189.26 Objectives[3]: 16373.230 10522161.26 Objectives[4]: 16610.760 10496098.46 Objectives[5]: 16799.280 10495906.46
+
+spread -period 2
+Objectives[0]: 11788.330 20883138.64 Objectives[1]: 11798.532 20806748.34 Objectives[2]: 17412.430 10632916.68 Objectives[3]: 17432.164 10616823.68
+
+random_nearest
+Objectives[0]: 11635.840 22370989.26 Objectives[1]: 18915.964 10097567.22 Objectives[2]: 19140.574 10060763.12 Objectives[3]: 19181.474 10006963.42 Objectives[4]: 19237.534 10004768.2 Objectives[5]: 19250.156 10002272.62
+
+moheft_green_energy
+
+trivial
+Objectives[0]: 10574.20 12788167.40 Objectives[1]: 53223.70 3175523.30 Objectives[2]: 53826.740 3170847.90 Objectives[3]: 54430.410 3165005.50 Objectives[4]: 55034.80 3160870.10 Objectives[5]: 55637.750 3157547.70
+
+stencil_1d
+Objectives[0]: 11779.732 11645823.74 Objectives[1]: 41415.402 272254.46 Objectives[2]: 41450.722 262707.76 Objectives[3]: 41485.2 260375.56 Objectives[4]: 41529.212 245916.26 Objectives[5]: 42057.722 244906.34
+
+stencil_1d_periodic
+Objectives[0]: 11718.440 13961083.46 Objectives[1]: 41472.680 582956.58 Objectives[2]: 41482.522 581992.50 Objectives[3]: 41578.504 580614.78 Objectives[4]: 41765.212 579051.0 Objectives[5]: 41847.142 577680.28
+
+dom
+Objectives[0]: 3643.924 1455240.28 Objectives[1]: 7637.144 36498.72 Objectives[2]: 7652.750 35377.2 Objectives[3]: 7653.30 33632.82 Objectives[4]: 7700.580 31957.32 Objectives[5]: 7777.590 31485.12
+
+tree
+Objectives[0]: 11567.50 11540373.6 Objectives[1]: 17962.792 10983358.60 Objectives[2]: 19536.890 9043718.34 Objectives[3]: 19607.150 9040634.94 Objectives[4]: 19711.592 9039715.54 Objectives[5]: 49646.974 334223.90
+
+fft
+Objectives[0]: 11647.20 13761371.94 Objectives[1]: 42341.240 215955.92 Objectives[2]: 42346.350 212694.2 Objectives[3]: 42358.540 199594.42 Objectives[4]: 42497.762 170663.32 Objectives[5]: 42530.830 158186.92
+
+nearest
+Objectives[0]: 11779.732 11645823.74 Objectives[1]: 41415.402 272254.46 Objectives[2]: 41450.722 262707.76 Objectives[3]: 41485.2 260375.56 Objectives[4]: 41529.212 245916.26 Objectives[5]: 42057.722 244906.34
+
+no_comm
+Objectives[0]: 11668.590 14437609.30 Objectives[1]: 40009.680 302508.70 Objectives[2]: 40034.780 300946.80 Objectives[3]: 40148.310 290289.0 Objectives[4]: 40216.840 285308.80 Objectives[5]: 40285.310 283006.0
+
+spread -period 2
+Objectives[0]: 11683.410 13646467.0 Objectives[1]: 39992.512 358763.30 Objectives[2]: 40124.802 337783.30 Objectives[3]: 40252.74 324683.70 Objectives[4]: 40257.792 324363.0 Objectives[5]: 40770.660 324290.12
+
+random_nearest
+Objectives[0]: 11515.760 12595209.98 Objectives[1]: 47859.132 215922.4 Objectives[2]: 47944.400 213099.74 Objectives[3]: 47956.262 206375.34 Objectives[4]: 47986.566 204154.56 Objectives[5]: 48060.852 203279.52
+
+
+==== experiment_2_4 ====
+
+heft
+
+trivial
+Makespan: 10574.20
+
+stencil_1d
+Makespan: 11633.612
+
+stencil_1d_periodic
+Makespan: 11774.930
+
+dom
+Makespan: 3566.282
+
+tree
+Makespan: 10770.720
+
+fft
+Makespan: 11637.924
+
+nearest
+Makespan: 11633.612
+
+no_comm
+Makespan: 11637.30
+
+spread -period 2
+Makespan: 11707.946
+
+random_nearest
+Makespan: 11361.626
+
+moheft_energy
+
+trivial
+Objectives[0]: 10569.930 15136950.70 Objectives[1]: 12409.770 11830678.90 Objectives[2]: 12414.880 11824494.50 Objectives[3]: 12971.720 11639621.70 Objectives[4]: 12989.290 11633630.30 Objectives[5]: 13015.150 11627365.90
+
+stencil_1d
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+stencil_1d_periodic
+Objectives[0]: 11655.650 21478125.48 Objectives[1]: 17752.880 10269665.56 Objectives[2]: 17762.180 10259291.6 Objectives[3]: 17795.480 10253784.76 Objectives[4]: 17859.20 10250573.36 Objectives[5]: 17859.640 10245067.6
+
+dom
+Objectives[0]: 3608.174 3661071.86 Objectives[1]: 6498.184 1731021.66 Objectives[2]: 6498.456 1712361.60 Objectives[3]: 6621.36 1706773.30 Objectives[4]: 6745.344 1701212.50 Objectives[5]: 6869.904 1695669.40
+
+tree
+Objectives[0]: 11598.770 21724362.68 Objectives[1]: 15176.924 10569622.14 Objectives[2]: 15178.840 10560330.14 Objectives[3]: 15279.502 10546666.72 Objectives[4]: 15333.886 10530765.54 Objectives[5]: 15357.994 10518965.44
+
+fft
+Objectives[0]: 11634.214 20176898.32 Objectives[1]: 16471.704 10662282.80 Objectives[2]: 16578.244 10652946.80 Objectives[3]: 16605.262 10647328.40
+
+nearest
+Objectives[0]: 11655.700 21795884.38 Objectives[1]: 16723.820 10481950.48 Objectives[2]: 16731.830 10477975.38 Objectives[3]: 16950.350 10445956.88 Objectives[4]: 16959.932 10443496.68 Objectives[5]: 17189.760 10443331.68
+
+no_comm
+Objectives[0]: 11709.140 22164731.20 Objectives[1]: 16358.50 10522480.26 Objectives[2]: 16364.770 10522189.26 Objectives[3]: 16373.230 10522161.26 Objectives[4]: 16610.760 10496098.46 Objectives[5]: 16799.280 10495906.46
+
+spread -period 2
+Objectives[0]: 11788.330 20883138.64 Objectives[1]: 11798.532 20806748.34 Objectives[2]: 17412.430 10632916.68 Objectives[3]: 17432.164 10616823.68
+
+random_nearest
+Objectives[0]: 11635.840 22370989.26 Objectives[1]: 18915.964 10097567.22 Objectives[2]: 19140.574 10060763.12 Objectives[3]: 19181.474 10006963.42 Objectives[4]: 19237.534 10004768.2 Objectives[5]: 19250.156 10002272.62
+
+moheft_green_energy
+
+trivial
+Objectives[0]: 10752.660 12526905.90 Objectives[1]: 59221.100 4127197.30 Objectives[2]: 59824.770 4117650.80 Objectives[3]: 60428.440 4108104.30 Objectives[4]: 61032.110 4100339.60 Objectives[5]: 61635.780 4092574.90
+
+stencil_1d
+Objectives[0]: 11656.30 17121901.62 Objectives[1]: 61198.194 204109.56 Objectives[2]: 61370.174 173053.86 Objectives[3]: 61370.484 162369.86 Objectives[4]: 61392.420 152823.16 Objectives[5]: 61429.402 143276.46
+
+stencil_1d_periodic
+Objectives[0]: 11648.590 18391889.74 Objectives[1]: 65385.764 178156.78 Objectives[2]: 65457.66 175035.36 Objectives[3]: 65471.936 159063.38 Objectives[4]: 66031.746 159039.42 Objectives[5]: 66656.524 158966.28
+
+dom
+Objectives[0]: 3587.630 2772452.76 Objectives[1]: 17125.182 2335.8 Objectives[2]: 17502.900 1657.40 Objectives[3]: 18023.612 1507.80 Objectives[4]: 18401.530 1.40 Objectives[5]: 18674.130 0.0
+
+tree
+Objectives[0]: 11575.490 16293835.52 Objectives[1]: 73185.146 336222.66 Objectives[2]: 73788.816 335799.66 Objectives[3]: 74440.6 322753.30 Objectives[4]: 75043.676 322265.0 Objectives[5]: 75647.346 322015.46
+
+fft
+Objectives[0]: 11584.50 18151570.22 Objectives[1]: 56145.490 341551.42 Objectives[2]: 56168.90 337273.6 Objectives[3]: 56292.994 336137.86 Objectives[4]: 56435.250 335233.82 Objectives[5]: 56503.910 334690.22
+
+nearest
+Objectives[0]: 11656.30 17121901.62 Objectives[1]: 61198.194 204109.56 Objectives[2]: 61370.174 173053.86 Objectives[3]: 61370.484 162369.86 Objectives[4]: 61392.420 152823.16 Objectives[5]: 61429.402 143276.46
+
+no_comm
+Objectives[0]: 11744.60 18898045.10 Objectives[1]: 60653.970 744445.0 Objectives[2]: 60828.490 734898.30 Objectives[3]: 61266.10 732505.10 Objectives[4]: 61321.90 731899.10 Objectives[5]: 62286.20 731440.10
+
+spread -period 2
+Objectives[0]: 11674.758 18910929.52 Objectives[1]: 58943.362 478798.34 Objectives[2]: 59101.112 453205.20 Objectives[3]: 59138.554 439814.60 Objectives[4]: 59188.460 426399.94 Objectives[5]: 59827.6 425969.34
+
+random_nearest
+Objectives[0]: 11552.940 18956305.16 Objectives[1]: 66384.244 86097.40 Objectives[2]: 66590.600 85799.32 Objectives[3]: 67016.982 85072.20 Objectives[4]: 67617.556 84536.84 Objectives[5]: 67635.258 84116.84
+
