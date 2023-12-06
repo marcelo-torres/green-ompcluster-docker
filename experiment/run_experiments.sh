@@ -5,7 +5,7 @@
 output_file='output.txt'
 
 algorithms=(
-    heft
+    heft_test
     moheft_energy
     moheft_green_energy
 )
@@ -69,7 +69,7 @@ do
             export OMPCLUSTER_SCHEDULER_INPUT_DIRECTORY=$experiment_path
 
 
-            output=$(mpirun -np 24 /task-bench/ompcluster/main -steps 64 -width 16 -type $topology -kernel compute_bound -iter 1 | grep -E 'Objectives|Makespan')
+            output=$(mpirun -np 24 /task-bench/ompcluster/main -steps 64 -width 32 -type $topology -kernel compute_bound -iter 1 | grep -E 'Objectives|Makespan')
             echo $output
             echo $output >> $output_file
             echo
