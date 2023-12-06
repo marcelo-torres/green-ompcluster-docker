@@ -22,6 +22,14 @@ exit
 cd ompc_docker_runtime && docker build -t ompc-runtime-moheft --build-arg BUILD_DIR=./project/build .
 cd ..
 
+# 05 Run experiment
+docker run --name ompc-experiment -v $PWD:/ompc/volume -it ompc-runtime-moheft
+
+
+#
+# OLD
+# 
+
 # 05. Start a cluster.
 cd ./ompc_docker_cluster/image_base/
 /bin/bash generate_mpi_images.sh
