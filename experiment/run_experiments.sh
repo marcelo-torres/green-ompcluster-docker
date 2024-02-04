@@ -78,3 +78,5 @@ do
     done
 
 done
+
+echo $(date) >> $output_file
