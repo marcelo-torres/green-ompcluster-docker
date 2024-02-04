@@ -5,6 +5,8 @@ HEFT_TEST = 'heft_test'
 MOHEFT_ENERGY = 'moheft_energy'
 MOHEFT_GREEN_ENERGY = 'moheft_green_energy'
 
+SHOW_LIST = True
+
 def extract_metricts_from_objectives(objective, algorithm):
 
     makespan = None
@@ -64,23 +66,17 @@ def format_objectives(objectives_line, algorithm):
         objective_list = list(
             map(str, objective_list)
         )
-        data.append(objective_list)
-    return data
 
-    data = objectives_line.split(',')
-    new_data = []
-    for index, d in enumerate(data):
-        is_makespan = (index % 2) == 0
-        d = float(d)
-        if is_makespan:    
-            d /= 60
+        if SHOW_LIST:
+            data.append(objective_list)
         else:
-            d /= 1000
-        d = round(d, DEFAULT_ROUND)
-        d = str(d)
-        new_data.append(d)
+            data.extend(objective_list)
     
-    return ','.join(new_data)
+    if SHOW_LIST:
+        return data
+    else:
+        return ','.join(data)
+
 
 def isBlank (myString):
     return not (myString and myString.strip().replace('\n', ''))
@@ -95,7 +91,7 @@ def isTopology(line):
     return line in ['trivial', 'stencil_1d', 'stencil_1d_periodic', 'dom', 'tree', 'fft', 'nearest', 'no_comm', 'spread -period 2', 'random_nearest']
 
 if __name__ == '__main__':
-    file = 'output-64-32_11c_new.txt'
+    file = 'output-64-32-beluga-v2/output-64-32_beluga-v2.txt'
 
     with open(file) as f:
         ignore_line = True
@@ -109,7 +105,7 @@ if __name__ == '__main__':
 
         for item in f.readlines():
 
-            if ignore_line:
+            if ignore_line or item.startswith("#"):
                 ignore_line = False
                 continue
 
@@ -146,7 +142,9 @@ if __name__ == '__main__':
 
         with open(f'{experiment_name}.csv', 'w') as o:
 
-            t = 1 * ',Makespan(min),Energia Total (Kj),Energia Verde (kJ), Energia Marrom (Kj)'
+            header_count = 1 if SHOW_LIST else 3
+
+            t = header_count * ',Makespan(min),Energia Total (Kj),Energia Verde (kJ), Energia Marrom (Kj)'
             o.write(f'Algoritmo,Topologia{t}\n')
             for algorithm_name in experiment.keys():
                 algorithm = experiment[algorithm_name]
@@ -157,7 +155,11 @@ if __name__ == '__main__':
                     data = algorithm[topology]
                     #print(f'\t\t{topology}')
                     #print(f'\t\t\t{algorithm[topology]}')
-                    for d in data:
-                        print(d)
-                        d = ','.join(d)
-                        o.write(f'{algorithm_name},{topology},{d}\n')       
+
+                    if SHOW_LIST:
+                        for d in data:
+                            print(d)
+                            d = ','.join(d)
+                            o.write(f'{topology},{algorithm_name},{d}\n')
+                    else:
+                        o.write(f'{topology},{algorithm_name},{data}\n')
