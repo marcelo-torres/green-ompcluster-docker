@@ -34,7 +34,7 @@ def extract_metricts_from_objectives(objective, algorithm):
 
 def format_objectives(objectives_line, algorithm):
 
-    for i in range(6):
+    for i in range(11):
         objectives_line = objectives_line.replace(f'[{i}]:', '')
     
     #print('objectives_line ' + objectives_line)
@@ -64,8 +64,8 @@ def format_objectives(objectives_line, algorithm):
         objective_list = list(
             map(str, objective_list)
         )
-        data.extend(objective_list)
-    return ','.join(data)
+        data.append(objective_list)
+    return data
 
     data = objectives_line.split(',')
     new_data = []
@@ -95,7 +95,7 @@ def isTopology(line):
     return line in ['trivial', 'stencil_1d', 'stencil_1d_periodic', 'dom', 'tree', 'fft', 'nearest', 'no_comm', 'spread -period 2', 'random_nearest']
 
 if __name__ == '__main__':
-    file = 'test-delete.txt'
+    file = 'output-64-32_11c_new.txt'
 
     with open(file) as f:
         ignore_line = True
@@ -146,15 +146,18 @@ if __name__ == '__main__':
 
         with open(f'{experiment_name}.csv', 'w') as o:
 
-            t = 3 * ',Makespan(min),Energia Total (Kj),Energia Verde (kJ), Energia Marrom (Kj)'
+            t = 1 * ',Makespan(min),Energia Total (Kj),Energia Verde (kJ), Energia Marrom (Kj)'
             o.write(f'Algoritmo,Topologia{t}\n')
             for algorithm_name in experiment.keys():
                 algorithm = experiment[algorithm_name]
                 
-                print(f'\t{algorithm_name}')
+                #print(f'\t{algorithm_name}')
 
                 for topology in algorithm.keys():
                     data = algorithm[topology]
-                    print(f'\t\t{topology}')
-                    print(f'\t\t\t{algorithm[topology]}')
-                    o.write(f'{algorithm_name},{topology},{data}\n')       
+                    #print(f'\t\t{topology}')
+                    #print(f'\t\t\t{algorithm[topology]}')
+                    for d in data:
+                        print(d)
+                        d = ','.join(d)
+                        o.write(f'{algorithm_name},{topology},{d}\n')       

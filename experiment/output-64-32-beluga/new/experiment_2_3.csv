@@ -1,0 +1,71 @@
+Algoritmo,Topologia,Makespan(min),Energia Total (Kj),Energia Verde (kJ), Energia Marrom (Kj)
+heft_test,dom,59.41,3944.51,1961.18,1983.33
+moheft_energy,dom,62.33,5080.68,1900.8,3179.89
+moheft_energy,dom,108.57,1736.67,523.96,1212.71
+moheft_energy,dom,108.58,1736.4,492.9,1243.5
+moheft_green_energy,dom,60.27,5930.28,2051.31,3878.98
+moheft_green_energy,dom,199.92,2114.2,2098.98,15.22
+moheft_green_energy,dom,200.76,2051.36,2036.14,15.21
+heft_test,fft,192.97,18694.83,8121.87,10572.95
+moheft_energy,fft,194.13,32812.3,8385.98,24426.32
+moheft_energy,fft,194.96,32242.67,8383.85,23858.82
+moheft_energy,fft,349.4,9916.71,3380.18,6536.54
+moheft_green_energy,fft,193.47,33488.23,8373.61,25114.62
+moheft_green_energy,fft,322.54,31610.87,9827.34,21783.53
+moheft_green_energy,fft,814.91,14931.39,14689.72,241.67
+heft_test,nearest,196.29,18890.49,8129.06,10761.43
+moheft_energy,nearest,196.52,31443.22,8338.36,23104.87
+moheft_energy,nearest,351.44,9996.41,3262.37,6734.04
+moheft_energy,nearest,351.45,9979.27,3262.37,6716.91
+moheft_green_energy,nearest,195.75,31282.55,8228.14,23054.41
+moheft_green_energy,nearest,240.51,30976.68,8977.64,21999.04
+moheft_green_energy,nearest,770.96,15113.56,14720.13,393.43
+heft_test,no_comm,194.41,18843.11,8102.98,10740.13
+moheft_energy,no_comm,195.39,33776.19,8276.45,25499.74
+moheft_energy,no_comm,195.59,33694.76,8233.34,25461.42
+moheft_energy,no_comm,353.61,10004.34,3125.48,6878.86
+moheft_green_energy,no_comm,194.48,32237.18,8271.33,23965.85
+moheft_green_energy,no_comm,578.55,31451.14,9515,21936.14
+moheft_green_energy,no_comm,602.8,31556.44,9620.61,21935.82
+heft_test,random_nearest,193.55,18564.77,8058.59,10506.18
+moheft_energy,random_nearest,194.03,31846.93,8385.96,23460.97
+moheft_energy,random_nearest,194.94,31713.04,8343.35,23369.68
+moheft_energy,random_nearest,354.34,10216.9,3354.94,6861.96
+moheft_green_energy,random_nearest,193.34,33100.49,8618.92,24481.57
+moheft_green_energy,random_nearest,298.31,32418.24,10407.37,22010.87
+moheft_green_energy,random_nearest,749.5,14428.03,14056.48,371.56
+heft_test,spread -period 2,194.69,18785.24,8110.22,10675.02
+moheft_energy,spread -period 2,195.77,34837.46,8312.4,26525.06
+moheft_energy,spread -period 2,196.6,33614.27,8252.09,25362.18
+moheft_energy,spread -period 2,355.98,9742.02,2998.81,6743.21
+moheft_green_energy,spread -period 2,195.26,35741.76,8408.14,27333.62
+moheft_green_energy,spread -period 2,318.47,33016.22,10625.9,22390.32
+moheft_green_energy,spread -period 2,795.1,15243.03,14989.47,253.56
+heft_test,stencil_1d,196.29,18890.49,8129.06,10761.43
+moheft_energy,stencil_1d,196.52,31443.22,8338.36,23104.87
+moheft_energy,stencil_1d,351.44,9996.41,3262.37,6734.04
+moheft_energy,stencil_1d,351.45,9979.27,3262.37,6716.91
+moheft_green_energy,stencil_1d,195.93,31124.46,8222.45,22902.01
+moheft_green_energy,stencil_1d,233.95,30572.69,8582.04,21990.64
+moheft_green_energy,stencil_1d,793.29,14933.91,14610.59,323.32
+heft_test,stencil_1d_periodic,193.9,18748.64,8108.74,10639.9
+moheft_energy,stencil_1d_periodic,193.91,32259.42,8401.4,23858.02
+moheft_energy,stencil_1d_periodic,194,31795.73,8385.89,23409.84
+moheft_energy,stencil_1d_periodic,352.53,10034.46,3384.53,6649.93
+moheft_green_energy,stencil_1d_periodic,194.29,32249,8221.91,24027.09
+moheft_green_energy,stencil_1d_periodic,499.98,34621.47,12830.65,21790.82
+moheft_green_energy,stencil_1d_periodic,507.48,34666.99,12876.82,21790.18
+heft_test,tree,192.88,16876.34,7225.68,9650.66
+moheft_energy,tree,193.96,31081.65,7348.79,23732.86
+moheft_energy,tree,356.97,10683.78,3642.17,7041.62
+moheft_energy,tree,360.92,10683.53,3642.17,7041.36
+moheft_green_energy,tree,192.91,32244.19,7970.15,24274.04
+moheft_green_energy,tree,528.47,32318.32,10736.48,21581.84
+moheft_green_energy,tree,946.11,11440.39,11360.76,79.63
+heft_test,trivial,176.24,18513.53,8496.03,10017.51
+moheft_energy,trivial,177.3,28574.38,8873.57,19700.8
+moheft_energy,trivial,364.89,10193.51,3677.78,6515.73
+moheft_energy,trivial,374.72,10130.54,3687.33,6443.21
+moheft_green_energy,trivial,176.24,29971.84,8916.94,21054.9
+moheft_green_energy,trivial,930.54,10588.01,5799.37,4788.65
+moheft_green_energy,trivial,935.37,10593.96,5805.73,4788.23
