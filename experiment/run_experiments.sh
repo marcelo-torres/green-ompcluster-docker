@@ -11,7 +11,7 @@ algorithms=(
 )
 
 experiments=(
-    'experiment_1'
+    #'experiment_1'
     'experiment_2_1'
     'experiment_2_2'
     'experiment_2_3'
@@ -78,3 +78,5 @@ do
     done
 
 done
+
+echo $(date) >> $output_file

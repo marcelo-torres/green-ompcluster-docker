@@ -97,7 +97,7 @@ def generate_tasks_durations_and_save(graph_sizes, workers_tasks_durations_list,
 if __name__ == '__main__':
 
     seed = 1700704603
-    graph_type_sizes_file='./graph_type_sizes_64x16.csv'
+    graph_type_sizes_file='./graph_type_sizes_64x32.csv'
 
     iterations = [68719476736]
     workers=['amd_epyc_7453', 'intel_i5h', 'intel_i3']
