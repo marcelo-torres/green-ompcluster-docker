@@ -1,0 +1,31 @@
+Algoritmo,Topologia,Makespan(min),Energia Total (Kj),Energia Verde (kJ), Energia Marrom (Kj)
+trivial,heft_test,176.24,14492.8,3722.52,10770.28
+stencil_1d,heft_test,194.0,14350.53,3778.08,10572.46
+stencil_1d_periodic,heft_test,194.03,14372.53,3811.87,10560.67
+dom,heft_test,59.41,2996.92,590.13,2406.79
+tree,heft_test,192.77,13215.81,4000.73,9215.08
+fft,heft_test,193.48,14334.14,3745.59,10588.55
+nearest,heft_test,196.15,14485.11,3861.06,10624.04
+no_comm,heft_test,194.41,14435.43,3842.45,10592.98
+spread -period 2,heft_test,194.69,14381.98,3778.56,10603.42
+random_nearest,heft_test,192.48,14251.47,3729.25,10522.22
+trivial,moheft_energy,176.24,20339.89,4278.16,16061.73
+stencil_1d,moheft_energy,194.18,18821.3,5105.55,13715.75
+stencil_1d_periodic,moheft_energy,196.95,18470.43,4168.79,14301.64
+dom,moheft_energy,60.78,4077.67,595.38,3482.3
+tree,moheft_energy,190.35,18067.76,4921.5,13146.26
+fft,moheft_energy,194.13,19832.94,4342.35,15490.59
+nearest,moheft_energy,194.18,19002.85,5094.69,13908.16
+no_comm,moheft_energy,194.5,19282.02,4426.6,14855.42
+spread -period 2,moheft_energy,194.69,19297.25,4166.58,15130.67
+random_nearest,moheft_energy,193.93,18252.06,4835.74,13416.32
+trivial,moheft_green_energy,176.24,21081.04,5434.96,15646.08
+stencil_1d,moheft_green_energy,195.88,19089.49,5638.26,13451.23
+stencil_1d_periodic,moheft_green_energy,195.64,19586.61,5141.67,14444.94
+dom,moheft_green_energy,60.01,4274.03,860.4,3413.62
+tree,moheft_green_energy,191.39,17974.96,4958.2,13016.75
+fft,moheft_green_energy,194.39,19209.84,4746.09,14463.75
+nearest,moheft_green_energy,196.25,20068.96,5512.93,14556.03
+no_comm,moheft_green_energy,194.31,19752.41,4693.99,15058.42
+spread -period 2,moheft_green_energy,194.5,18565.61,4383.12,14182.5
+random_nearest,moheft_green_energy,195.29,18918.21,4650.98,14267.23

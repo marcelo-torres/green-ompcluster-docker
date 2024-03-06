@@ -91,7 +91,7 @@ def isTopology(line):
     return line in ['trivial', 'stencil_1d', 'stencil_1d_periodic', 'dom', 'tree', 'fft', 'nearest', 'no_comm', 'spread -period 2', 'random_nearest']
 
 if __name__ == '__main__':
-    file = 'output-64-32-beluga-v2/output-64-32_beluga-v2.txt'
+    file = 'output.txt'
 
     with open(file) as f:
         ignore_line = True
