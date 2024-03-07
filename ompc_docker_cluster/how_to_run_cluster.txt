@@ -1,0 +1,25 @@
+# 01. Start a cluster.
+cd..
+cd ./ompc_docker_cluster/image_base/
+/bin/bash generate_mpi_images.sh
+cd ../../
+
+# 02. Start a cluster.
+cd ompc_docker_cluster
+    
+# 03.1 Test cluster 
+cd cluster_experiment # or cd cluster_test
+sh start_cluster.sh
+docker attach cluster_experiment_head_1 # or cd cluster_test_head_1
+
+# 03.2 Experiment cluster 
+cd experiment_beluga_server
+sh start_cluster.sh
+docker attach experiment_beluga_server-head-1
+
+# 04. Execute an application:
+# -np 8 = 1 MPI process to head and 7 to worker nodes
+cd /volume/examples/matmul
+chmod +x ./matmul
+export OMPCLUSTER_SCHEDULER=nheft
+mpirun -np 8 --hostfile /volume/ompc-host-file  ./matmul 80 20
