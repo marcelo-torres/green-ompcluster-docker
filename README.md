@@ -14,7 +14,7 @@ The repository is organized as follows:
 
 **experiment:** _Scripts and files to support the experiment execution._
 
-**ompc_docker_cluster:** _A local cluster built with Docker containers. Scripts to get tasks' durations using a cluster node are implemented here._
+**ompc_docker_cluster:** _A local cluster built with Docker containers. Scripts to get the duration of tasks durations using a cluster node are implemented here._
  
 **ompc_docker_compile:** _The docker image definition to compile LLVM._
 
@@ -39,7 +39,7 @@ docker run --name ompc-build -v $PWD:/ompc/volume \
     --env BUILD_DIR=/ompc/volume/ompc_docker_runtime/project/build \
     --env PROJECT_DIR=llvm-project-moheft \
     --env GIT_REPOSITORY=https://gitlab.com/gui.alm02/llvm-project-moheft.git \
-    --env GIT_BRANCH=main \
+    --env GIT_BRANCH=ompcluster/g-moheft \
     -it ompc-build
 ```
 
