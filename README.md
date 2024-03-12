@@ -10,7 +10,7 @@ We [fork the LLVM project](https://gitlab.com/gui.alm02/llvm-project-moheft/-/tr
 
 ## Repository
 
-The repository is organized as follows:
+This repository is organized as follows:
 
 **experiment:** _Scripts and files to support the experiment execution._
 
