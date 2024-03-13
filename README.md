@@ -6,7 +6,7 @@ The [OpenMP Cluster (OMPC)](https://doi.org/10.1145/3547276.3548444) allows deve
 
 The OMPC uses the OpenMP computation offloading technique to schedule tasks through the MPI programming model. The original OMPC implementation is available in the LLVM Compiler Infrastructure Project.
 
-We [fork the LLVM project](https://gitlab.com/gui.alm02/llvm-project-moheft/-/tree/main?ref_type=heads) to extend OMPC with new scheduling algorithms: [MOHEFT](https://doi.org/10.1109/CloudCom.2012.6427573), G-MOHEFT (Green MOHEFT), and a new implementation of HEFT. The G-MOHEFT is a green energy-aware algorithm based on the multi-objective scheduling algorithm MOHEFT.
+We [fork the LLVM project](https://gitlab.com/gui.alm02/llvm-project-moheft/-/tree/ompcluster/g-moheft) to extend OMPC with new scheduling algorithms: [MOHEFT](https://doi.org/10.1109/CloudCom.2012.6427573), G-MOHEFT (Green MOHEFT), and a new implementation of HEFT. The G-MOHEFT is a green energy-aware algorithm based on the multi-objective scheduling algorithm MOHEFT.
 
 ## Repository
 
