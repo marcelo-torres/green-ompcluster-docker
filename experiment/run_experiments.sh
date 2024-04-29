@@ -27,10 +27,8 @@ topologies=(
     dom
     tree
     fft
-    nearest
     no_comm
     "spread -period 2"
-    random_nearest
 )
 
 echo $(date) > $output_file
