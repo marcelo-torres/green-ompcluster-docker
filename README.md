@@ -1,7 +1,5 @@
 # Green OMPC
 
-This repository supports the experiments presented in the paper Reducing carbon emissions of distributed systems: a multi-objective approach.
-
 The [OpenMP Cluster (OMPC)](https://doi.org/10.1145/3547276.3548444) allows developers to create distributed applications using the well-known OpenMP API, a specification for parallel programming.
 
 The OMPC uses the OpenMP computation offloading technique to schedule tasks through the MPI programming model. The original OMPC implementation is available in the LLVM Compiler Infrastructure Project.
