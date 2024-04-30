@@ -1,6 +1,0 @@
-docker compose up -d 
-docker attach $head_container
-cd /volume
-bash get_iterations.sh
-bash get_graph_size.sh
-python3 get_tasks_durations_files
